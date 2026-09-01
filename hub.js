@@ -64,7 +64,7 @@
       champ.hidden = true;
       return;
     }
-    if (cartes.length < 4) champ.hidden = true;
+    champ.hidden = cartes.length < 4;
 
     champ.addEventListener('input', function () {
       var q = champ.value.trim().toLowerCase();
