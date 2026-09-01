@@ -1,0 +1,2 @@
+Ce fichier texte est servi directement par GitHub Pages.
+S'il s'affiche dans la page, le chargement de fichiers annexes fonctionne.
