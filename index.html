@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page de test — GitHub Pages</title>
+<title>Projets — Johann Lüthi</title>
+<meta name="description" content="Index des projets et contenus publiés.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="logo.svg">
 </head>
@@ -11,36 +12,49 @@
 <main>
   <header>
     <img src="logo.svg" alt="">
-    <h1>Ça marche.</h1>
+    <div>
+      <h1>Projets</h1>
+      <p class="sous-titre">Contenus et expériences publiés ici.</p>
+    </div>
   </header>
 
-  <p class="lead">Cette page vérifie que GitHub Pages sert correctement chacun des
-  types de fichiers dont tu as besoin. Remplace-la par ton contenu quand tu veux.</p>
-
-  <h2>Types de fichiers testés</h2>
-  <div class="grid">
-    <div class="check"><span class="dot"></span> HTML — cette page</div>
-    <div class="check"><span class="dot"></span> CSS — <code>style.css</code></div>
-    <div class="check"><span class="dot"></span> SVG — le logo ci-dessus</div>
-    <div class="check"><span class="dot"></span> JS — <code>app.js</code></div>
+  <div class="barre">
+    <input id="filtre" type="search" placeholder="Filtrer les projets…" aria-label="Filtrer les projets" hidden>
+    <span id="compteur" class="compteur">chargement…</span>
   </div>
 
-  <h2>Image bitmap</h2>
-  <p><img src="degrade.png" alt="Dégradé de test" width="160" height="160" style="border-radius:10px"></p>
+  <div id="liste" class="projets"></div>
 
-  <h2>Fichier texte</h2>
-  <div class="card"><p id="txt" style="margin:0;white-space:pre-wrap;color:var(--muted)">chargement…</p></div>
+  <p id="erreur" class="message message-erreur" hidden></p>
 
-  <h2>JavaScript</h2>
-  <div class="card">
-    <p><button id="ping" type="button">Tester</button></p>
-    <p id="out" style="margin:0;color:var(--muted)">Clique pour vérifier que le JS s'exécute.</p>
+  <div id="vide" class="message" hidden>
+    Aucun projet pour l'instant. Ajoute une entrée dans <code>projects.json</code>.
   </div>
+
+  <noscript>
+    <p class="message">La liste est générée en JavaScript.
+    Sans JS, consulte <a href="projects.json">projects.json</a>.</p>
+  </noscript>
 
   <footer>
-    Hébergé gratuitement sur GitHub Pages · publié depuis Claude Code.
+    <details>
+      <summary>Ajouter un projet</summary>
+      <p>Crée un dossier (ex. <code>mon-projet/</code>) contenant un <code>index.html</code>,
+      puis ajoute une entrée dans <code>projects.json</code> :</p>
+      <pre><code>{
+  "titre": "Mon projet",
+  "url": "mon-projet/",
+  "description": "En une phrase.",
+  "tags": ["HTML", "SVG"],
+  "date": "2026-09-01",
+  "statut": "en ligne"
+}</code></pre>
+      <p><code>statut</code> accepte <code>en ligne</code>, <code>brouillon</code> ou
+      <code>archivé</code>. Le tri se fait par date, la plus récente en premier.
+      Puis <code>git add -A &amp;&amp; git commit -m "maj" &amp;&amp; git push</code>.</p>
+    </details>
   </footer>
 </main>
-<script src="app.js"></script>
+<script src="hub.js"></script>
 </body>
 </html>

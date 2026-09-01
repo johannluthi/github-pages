@@ -1,0 +1,10 @@
+[
+  {
+    "titre": "Page de test",
+    "url": "demo/",
+    "description": "Vérifie que GitHub Pages sert correctement chaque format : HTML, CSS, JS, SVG, PNG et TXT.",
+    "tags": ["HTML", "CSS", "JS", "SVG"],
+    "date": "2026-09-01",
+    "statut": "en ligne"
+  }
+]
