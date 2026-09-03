@@ -113,6 +113,12 @@ td.mono,th.mono{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabu
 .stat.todo{background:var(--todo-bg);color:var(--todo-ink)}
 .stat.chk{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
 .srcnote{margin:6px 0 0;font-size:12.5px;color:var(--ink-3);line-height:1.45}
+.regles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:22px 0 0;padding:0;list-style:none}
+.regles li{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--brand);padding:13px 15px;border-radius:0 2px 2px 0}
+.regles b{display:block;font-size:14.5px;margin-bottom:3px}
+.regles span{font-size:13.8px;color:var(--ink-2);line-height:1.5}
+.non{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.non li{font-size:13.5px;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);padding:5px 10px;border-radius:2px}
 
 .decisions{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin:0;padding:0;list-style:none}
 .dec{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:18px}
@@ -741,6 +747,47 @@ footer p{margin:0;max-width:74ch}
 <hr class="rule">
 
 <section>
+  <h2>Ce qu’il faut rapporter du terrain</h2>
+  <p class="lede">Consignes à transmettre à toute personne qui part en camp ou en excursion et accepte de filmer. Elles tiennent sur un écran de téléphone et ne demandent aucun matériel : ce qui manque au film, ce ne sont pas de belles images, ce sont <strong>des gestes filmés de près</strong>.</p>
+
+  <ul class="regles">
+    <li><b>Horizontal, toujours</b><span>Et, quand c’est possible, refaire le même plan en vertical : les réseaux le réclament, et un recadrage abîme toujours quelque chose.</span></li>
+    <li><b>Dix à quinze secondes par plan</b><span>Appareil posé ou coudes au corps, sans bouger. Un plan de dix secondes stable vaut mieux qu’une minute de balayage.</span></li>
+    <li><b>Aucun zoom</b><span>Le zoom d’un téléphone dégrade l’image. Pour voir de plus près, avancer.</span></li>
+    <li><b>Se rapprocher, vraiment</b><span>La main, l’outil, l’échantillon, le carnet, l’écran de l’instrument. C’est ce qu’on n’a pas et qu’on ne peut pas reconstituer.</span></li>
+    <li><b>Laisser tourner le son</b><span>Le bruit du terrain — vent, pas, crayon, une phrase d’explication — vaut de l’or. Éviter de commenter par-dessus.</span></li>
+    <li><b>Le soleil derrière soi</b><span>Et pas de contre-jour sur les visages. Le début et la fin de journée donnent la meilleure lumière.</span></li>
+  </ul>
+
+  <div class="callout">
+    <h3>Les six plans qui manquent, par ordre d’utilité</h3>
+    <p><strong>1.</strong> Une main qui manipule : casser, prélever, poser sur la paume, régler un instrument — le plus près possible.<br>
+    <strong>2.</strong> Quelqu’un qui note dans un carnet ou saisit une valeur, avec l’instrument visible dans le cadre.<br>
+    <strong>3.</strong> Un relevé en cours, plan taille, où l’on comprend le dispositif — trépied, sonde, mètre, tarière.<br>
+    <strong>4.</strong> Le groupe qui écoute une explication : filmer <em>les visages qui écoutent</em>, pas la personne qui parle.<br>
+    <strong>5.</strong> L’arrivée sur le site — marche en file, sacs, matériel porté.<br>
+    <strong>6.</strong> La fin de journée : cartes dépliées, discussions, camp. C’est le seul moment où l’on peut sourire à la caméra.</p>
+  </div>
+
+  <p class="lede" style="margin-top:26px;font-size:15px"><strong>Ce qui ne servira pas</strong></p>
+  <ul class="non">
+    <li>La photo de groupe qui pose</li>
+    <li>Les panoramiques à 360°</li>
+    <li>Les plans de plus de trente secondes</li>
+    <li>Le zoom numérique</li>
+    <li>Les vidéos verticales <em>seules</em></li>
+    <li>Les paysages sans personne</li>
+  </ul>
+
+  <div class="callout">
+    <h3>Avant de filmer</h3>
+    <p>Prévenir le groupe que les images pourront servir à une vidéo de promotion de la Faculté, et noter qui préfère ne pas apparaître — c’est plus simple à faire sur place qu’à rattraper au montage. Garder les fichiers d’origine, sans les passer par une messagerie qui les recompresse.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
   <h2>Où en est le matériel</h2>
   <p class="lede">Quatre des six filières disposent aujourd’hui d’images exploitables, issues de fonds existants : des films réalisés par des étudiant·e·s dans le cadre d’un séminaire, des captations d’ateliers de projet d’urbanisme menés avec des collectivités, les vidéos du master conjoint avec une université partenaire, un film de terrain issu d’un projet de recherche, et la chaîne vidéo d’un laboratoire. S’y ajoutent des photographies de terrain en haute définition, récupérées dans les présentations des Journées Découverte.</p>
   <p class="lede">Deux filières n’ont encore rien de recensé. Les images d’archives, quand elles servent, sont réservées aux plans de terrain et de laboratoire — jamais à l’ouverture ni à la fin, où l’écart de texture se verrait.</p>
@@ -760,7 +807,7 @@ footer p{margin:0;max-width:74ch}
       <tbody>
         <tr>
           <td><strong>A — Montage d’archives</strong></td>
-          <td>Entièrement issu des fonds existants des filières</td>
+          <td>Entièrement issu des fonds existants (glissement de terrain, camp BGS, ateliers 2019, agriculture urbaine)</td>
           <td>Campus et séminaires uniquement, tournables toute l’année à Géopolis</td>
           <td class="mono">Printemps 2027</td>
           <td>Écart de texture entre sources ; rien pour le master en études du tourisme</td>
