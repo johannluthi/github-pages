@@ -3,8 +3,25 @@
     "titre": "Page de test",
     "url": "demo/",
     "description": "Vérifie que GitHub Pages sert correctement chaque format : HTML, CSS, JS, SVG, PNG et TXT.",
-    "tags": ["HTML", "CSS", "JS", "SVG"],
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "SVG"
+    ],
     "date": "2026-09-01",
     "statut": "en ligne"
+  },
+  {
+    "titre": "Du terrain à Géopolis",
+    "url": "video-master/",
+    "description": "Storyboard de la vidéo de promotion des six masters de la Faculté des géosciences et de l’environnement : quatre chapitres, vingt-quatre plans.",
+    "tags": [
+      "Storyboard",
+      "Vidéo",
+      "UNIL"
+    ],
+    "date": "2026-09-03",
+    "statut": "brouillon"
   }
 ]

@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Du terrain à Géopolis — storyboard</title>
+<meta name="description" content="Storyboard de la vidéo de promotion des six masters de la Faculté des géosciences et de l’environnement : quatre chapitres, vingt-quatre plans.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../logo.svg">
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --brand:#0037eb; --marine:#002664; --on-blue:#ffffff;
+  --bg:#f4f7fa; --surface:#ffffff; --surface-2:#eff3f6;
+  --ink:#0a1f30; --ink-2:#4b6373; --ink-3:#7b909e;
+  --line:#d6dee6; --line-soft:#e6ecf1;
+  --brand-text:#0037eb; --frame-ink:#2b4759;
+  --ok-bg:#e4f0e8; --ok-ink:#1d5c39;
+  --todo-bg:#f2e9dd; --todo-ink:#7a4f1d;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#071320; --surface:#0e2130; --surface-2:#132b3d;
+    --ink:#eaf1f6; --ink-2:#9db1c0; --ink-3:#6f8697;
+    --line:#1d3446; --line-soft:#16293a;
+    --brand-text:#8aa8ff; --frame-ink:#b7cad8;
+    --ok-bg:#123324; --ok-ink:#8fd6ac;
+    --todo-bg:#33260f; --todo-ink:#e5bb7e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#071320; --surface:#0e2130; --surface-2:#132b3d;
+  --ink:#eaf1f6; --ink-2:#9db1c0; --ink-3:#6f8697;
+  --line:#1d3446; --line-soft:#16293a;
+  --brand-text:#8aa8ff; --frame-ink:#b7cad8;
+  --ok-bg:#123324; --ok-ink:#8fd6ac;
+  --todo-bg:#33260f; --todo-ink:#e5bb7e;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+a{color:var(--brand-text)}
+:focus-visible{outline:none;box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--brand);border-radius:2px}
+.band-marine{background:var(--marine);height:8px}
+.band-brand{background:var(--brand);color:var(--on-blue)}
+.band-brand .wrap{display:flex;align-items:baseline;gap:14px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.wordmark{font-weight:700;font-size:20px;letter-spacing:-.02em}
+.band-brand .fac{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+
+.hero{background:var(--marine);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{padding:44px 20px 38px;position:relative;z-index:1}
+.hero-circle{position:absolute;right:-90px;top:-110px;width:340px;height:340px;border-radius:50%;background:var(--brand);opacity:.9}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#a9c0ff;margin:0 0 14px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.02;letter-spacing:-.03em;margin:0;text-wrap:balance;font-weight:700}
+.thesis{max-width:36em;margin:16px 0 0;color:#d3e0f2;font-size:17px}
+.meta{display:flex;flex-wrap:wrap;gap:16px 28px;margin:26px 0 0;padding:0;list-style:none}
+.meta li{display:flex;flex-direction:column;gap:2px}
+.meta .k{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#94aee0}
+.meta .v{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:17px;font-variant-numeric:tabular-nums;color:#fff}
+
+section{padding:44px 0}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0 0 18px;font-weight:600}
+.lede{max-width:64ch;font-size:17px;margin:0}
+.lede + .lede{margin-top:12px}
+.callout{margin:22px 0 0;border-left:3px solid var(--brand);background:var(--surface);padding:16px 18px;border-radius:0 2px 2px 0}
+.callout h3{margin:0 0 6px;font-size:16px;font-weight:600}
+.callout p{margin:0;color:var(--ink-2);font-size:15px;max-width:62ch}
+
+/* légende des masters */
+.masters{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.masters li{display:flex;gap:10px;align-items:baseline;background:var(--surface);border:1px solid var(--line);padding:10px 12px;border-radius:2px}
+.code{font-family:"JetBrains Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.06em;color:var(--brand-text);border:1px solid currentColor;padding:1px 5px;border-radius:2px;white-space:nowrap}
+.masters .nm{font-size:14.5px;line-height:1.35}
+.masters .nm small{display:block;color:var(--ink-3);font-size:12.5px}
+
+/* matrice */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:2px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:600;background:var(--surface-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.mono,th.mono{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+.matrix td{min-width:150px;color:var(--ink-2)}
+.matrix td b{display:block;color:var(--ink);font-weight:600;font-family:"JetBrains Mono",monospace;font-size:11.5px;margin-bottom:2px}
+.matrix th[scope="row"]{background:var(--surface);border-right:1px solid var(--line-soft)}
+
+/* séquences */
+.seq{border-top:2px solid var(--marine);padding-top:22px;margin-top:46px}
+.seq:first-of-type{margin-top:0}
+.seq-head{display:grid;grid-template-columns:auto 1fr auto;gap:0 18px;align-items:start}
+.seq-num{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:30px;color:var(--brand-text);line-height:1;padding-top:2px}
+.seq-title{margin:0;font-size:25px;letter-spacing:-.02em;line-height:1.15;font-weight:600}
+.seq-intent{grid-column:2;margin:8px 0 0;color:var(--ink-2);max-width:60ch}
+.seq-time{font-family:"JetBrains Mono",monospace;font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink-2);white-space:nowrap;background:var(--surface-2);padding:5px 9px;border-radius:2px}
+.vo{grid-column:2;margin:14px 0 0;padding-left:12px;border-left:2px solid var(--brand);font-size:15.5px;max-width:52ch}
+.vo span{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:2px}
+
+.grid6{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px;margin-top:26px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:2px;display:flex;flex-direction:column;overflow:hidden}
+.card .frame{width:100%;aspect-ratio:16/9;display:block;color:var(--frame-ink);background:var(--surface-2);border-bottom:1px solid var(--line-soft)}
+.card-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-top .tc{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums;margin-left:auto}
+.card h4{margin:0;font-size:15px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.card p{margin:0;font-size:13.8px;color:var(--ink-2);line-height:1.5}
+.stat{font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:2px 7px;border-radius:2px;align-self:flex-start;margin-top:auto}
+.stat.ok{background:var(--ok-bg);color:var(--ok-ink)}
+.stat.todo{background:var(--todo-bg);color:var(--todo-ink)}
+.stat.chk{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.srcnote{margin:6px 0 0;font-size:12.5px;color:var(--ink-3);line-height:1.45}
+
+.decisions{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.dec{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:18px}
+.dec h3{margin:0 0 6px;font-size:16px;font-weight:600}
+.dec p{margin:0;font-size:14.5px;color:var(--ink-2)}
+.dec .reco{margin-top:10px;font-size:14px;color:var(--ink)}
+.dec .reco b{color:var(--brand-text)}
+
+footer{background:var(--surface-2);border-top:1px solid var(--line);padding:26px 0;color:var(--ink-2);font-size:13.5px}
+footer p{margin:0;max-width:74ch}
+@media (max-width:700px){
+  .seq-head{grid-template-columns:auto 1fr}
+  .seq-time{grid-column:2;justify-self:start;margin-top:8px}
+  .seq-intent,.vo{grid-column:1/-1}
+}
+</style>
+
+<div class="band-marine"></div>
+<div class="band-brand"><div class="wrap"><span class="wordmark">Unil.</span><span class="fac">Faculté des géosciences et de l’environnement</span></div></div>
+
+<div class="hero">
+  <div class="hero-circle" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Vidéo de promotion — les six masters FGSE · storyboard</p>
+    <h1>Du terrain à Géopolis</h1>
+    <p class="thesis">Un même geste scientifique suivi de bout en bout — observer, mesurer, analyser, débattre — et à chaque étape, les six masters de la Faculté côte à côte. Le film ne présente pas six filières l’une après l’autre : il montre une méthode commune, déclinée six fois.</p>
+    <ul class="meta">
+      <li><span class="k">Durée</span><span class="v">2′20″</span></li>
+      <li><span class="k">Chapitres</span><span class="v">4</span></li>
+      <li><span class="k">Plans</span><span class="v">24</span></li>
+      <li><span class="k">Masters</span><span class="v">6 × 4</span></li>
+      <li><span class="k">Filières pourvues</span><span class="v">4 / 6</span></li>
+      <li><span class="k">Formats</span><span class="v">16:9 + 9:16</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <h2>Le principe de construction</h2>
+  <p class="lede">Le fil rouge reste celui validé : le terrain, l’observation, la collecte, l’analyse, la discussion, puis le campus. Ce qui change dans cette version, c’est la <strong>règle des six</strong> : chaque chapitre contient exactement six plans, un par master. Aucune filière n’est reléguée à une seule apparition, et aucune n’ouvre deux chapitres de suite.</p>
+  <p class="lede">La conséquence est arithmétique et il faut l’assumer devant le décanat : 24 plans ne tiennent pas en 1′50″. Le film passe à <strong>2′20″</strong>, avec des plans courts de 5 à 7 secondes. C’est le prix de la représentation intégrale — l’alternative serait de tourner à trois chapitres, ce que je ne recommande pas : le chapitre « analyse » est celui qui distingue vraiment un master d’un bachelor.</p>
+  <div class="callout">
+    <h3>Ce que la règle des six impose au tournage</h3>
+    <p>Un plan par master et par chapitre suppose que chaque filière fournisse au moins quatre situations filmables : une de terrain, une de collecte, une d’analyse, une de vie de campus. C’est le recensement de matériel ci-dessous qui conditionne le calendrier, pas l’inverse.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <h2>Les six masters et leurs codes de plan</h2>
+  <ul class="masters">
+    <li><span class="code">TER</span><span class="nm">Sciences de la Terre<small>MSc</small></span></li>
+    <li><span class="code">GEO</span><span class="nm">Géographie<small>MSc</small></span></li>
+    <li><span class="code">ENV</span><span class="nm">Sciences de l’environnement<small>MSc</small></span></li>
+    <li><span class="code">BGS</span><span class="nm">Biogéosciences<small>MSc — conjoint avec l’Université de Neuchâtel</small></span></li>
+    <li><span class="code">TOU</span><span class="nm">Études du tourisme<small>MA — site de Sion</small></span></li>
+    <li><span class="code">FPD</span><span class="nm">Fondements et pratiques de la durabilité<small>MA</small></span></li>
+  </ul>
+  <p class="lede" style="margin-top:18px;color:var(--ink-2);font-size:15px">Intitulés à faire confirmer par le décanat avant le carton final — c’est le seul endroit du film où les six noms apparaissent écrits.</p>
+</section>
+
+<hr class="rule">
+
+<section>
+  <h2>La matrice — où chaque master apparaît</h2>
+  <div class="tablewrap">
+    <table class="matrix">
+      <thead>
+        <tr><th>Master</th><th>01 · Terrain</th><th>02 · Collecte</th><th>03 · Analyse</th><th>04 · Campus</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row"><span class="code">TER</span></th>
+          <td><b>1.1</b>Moraine, relevé structural</td><td><b>2.4</b>Géoradar en ville</td><td><b>3.1</b>Lame mince au microscope</td><td><b>4.2</b>Vitrines de roches, atrium</td></tr>
+        <tr><th scope="row"><span class="code">BGS</span></th>
+          <td><b>1.2</b>Carotte en zone humide</td><td><b>2.5</b>Jardins urbains, oiseaux</td><td><b>3.2</b>Paillasse, loupe binoculaire</td><td><b>4.4</b>Salle de travail, le soir</td></tr>
+        <tr><th scope="row"><span class="code">GEO</span></th>
+          <td><b>1.3</b>Entretien en bord de champ</td><td><b>2.1</b>Enquête sur une place</td><td><b>3.4</b>Couches SIG à l’écran</td><td><b>4.1</b>Parvis de Géopolis</td></tr>
+        <tr><th scope="row"><span class="code">ENV</span></th>
+          <td><b>1.4</b>Sonde en rivière</td><td><b>2.2</b>Capteur d’air sur mât</td><td><b>3.3</b>Analyse sous la hotte</td><td><b>4.5</b>Sortie du campus, vélos</td></tr>
+        <tr><th scope="row"><span class="code">TOU</span></th>
+          <td><b>1.5</b>Flux au départ d’une remontée</td><td><b>2.3</b>Comptage devant un site</td><td><b>3.5</b>Dépouillement d’entretiens</td><td><b>4.3</b>Terrasse, Zelig</td></tr>
+        <tr><th scope="row"><span class="code">FPD</span></th>
+          <td><b>1.6</b>Atelier participatif en plein air</td><td><b>2.6</b>Séance avec une commune</td><td><b>3.6</b>Controverse en séminaire</td><td><b>4.6</b>Carton final, les six noms</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <h2>Découpage plan par plan</h2>
+
+  <!-- SEQ 1 -->
+  <div class="seq">
+    <div class="seq-head">
+      <div class="seq-num">01</div>
+      <h3 class="seq-title">Le terrain — observer</h3>
+      <div class="seq-time">0:00 → 0:36 · 36″</div>
+      <p class="seq-intent">Ouvrir large sur la haute montagne, puis descendre par paliers jusqu’au bord d’un champ et à un atelier d’habitant·e·s. Le terrain de la Faculté n’est pas un décor unique : c’est un glacier, une zone humide, une exploitation, une rivière, une station, une place de village. Son direct dominant.</p>
+      <p class="vo"><span>Voix off</span>« Une question de recherche, ça commence rarement derrière un écran. »</p>
+    </div>
+    <div class="grid6">
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Vue large d’une moraine alpine, file de silhouettes sur la crête">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M0 62 L26 32 L46 52 L70 24 L96 56 L120 38 L160 58"/>
+            <path d="M0 74 L160 66" opacity=".45"/><circle cx="128" cy="18" r="6" opacity=".55"/>
+          </g>
+          <g fill="currentColor"><circle cx="54" cy="70" r="1.8"/><circle cx="64" cy="72" r="1.8"/><circle cx="74" cy="73" r="1.8"/></g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">TER</span><span class="tc">1.1 · 0:00 · 7″</span></div>
+          <h4>Moraine, relevé structural</h4>
+          <p>Drone latéral à l’aube, puis coupe sur une main qui pose la boussole sur la roche. Plan d’ouverture du film.</p>
+          <span class="stat ok">Fonds existant</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Carotte de sédiment extraite d’une zone humide">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="60" y="14" width="26" height="62" rx="2"/>
+            <path d="M60 30 H86 M60 44 H86 M60 58 H86" opacity=".55"/>
+            <path d="M0 78 q20 -6 40 0 t40 0 t40 0 t40 0" opacity=".5"/>
+            <path d="M96 40 L124 30" stroke-width="2.2"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">BGS</span><span class="tc">1.2 · 0:07 · 6″</span></div>
+          <h4>Carotte en zone humide</h4>
+          <p>Extraction d’une carotte, lecture des strates à contre-jour. Bottes dans l’eau, gestes lents.</p>
+          <span class="stat ok">Fonds existant</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Entretien entre une étudiante et un agriculteur en bord de champ">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <circle cx="54" cy="32" r="7"/><path d="M54 39 V62 M54 62 L46 82 M54 62 L62 82 M54 46 L70 52"/>
+            <circle cx="104" cy="34" r="7"/><path d="M104 41 V62 M104 62 L96 82 M104 62 L112 82 M104 48 L88 54"/>
+            <path d="M0 70 H160" opacity=".35"/><path d="M6 62 H40 M120 60 H156" opacity=".4"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">GEO</span><span class="tc">1.3 · 0:13 · 6″</span></div>
+          <h4>Entretien en bord de champ</h4>
+          <p>Une étudiante enregistre un agriculteur ; le carnet, le micro-cravate, le champ derrière.</p>
+          <span class="stat ok">Fonds existant</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Sonde multiparamètre plongée dans une rivière">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M0 54 q26 -8 52 0 t52 0 t56 0" opacity=".55"/>
+            <path d="M0 66 q26 -8 52 0 t52 0 t56 0" opacity=".4"/>
+            <path d="M0 78 q26 -8 52 0 t52 0 t56 0" opacity=".28"/>
+            <path d="M96 12 V60"/><rect x="90" y="58" width="12" height="12" rx="2"/>
+            <circle cx="60" cy="26" r="6"/><path d="M60 32 V44 M60 34 L92 24"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">ENV</span><span class="tc">1.4 · 0:19 · 6″</span></div>
+          <h4>Sonde en rivière</h4>
+          <p>Relevé physico-chimique au fil de l’eau, lecture de la valeur à l’écran du boîtier.</p>
+          <span class="stat chk">À vérifier</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Comptage des flux au départ d’une remontée mécanique">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M0 20 L160 40"/><path d="M40 25 V38 M40 38 h14 v10 h-14 z" opacity=".8"/>
+            <path d="M96 32 V45 M96 45 h14 v10 H96 z" opacity=".8"/>
+            <path d="M0 78 L48 60 L96 76 L160 62" opacity=".45"/>
+            <circle cx="30" cy="66" r="5"/><path d="M30 71 V82"/>
+            <circle cx="48" cy="68" r="5"/><path d="M48 73 V84"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">TOU</span><span class="tc">1.5 · 0:25 · 5″</span></div>
+          <h4>Flux au départ d’une remontée</h4>
+          <p>Observation d’un site de montagne en saison : file d’attente, comptage au compteur manuel.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Atelier participatif en plein air autour d’une grande carte posée sur une table">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M34 56 L124 56 L136 66 L22 66 Z"/>
+            <path d="M48 66 V80 M110 66 V80"/>
+            <path d="M54 56 L70 48 L104 50 L92 56" opacity=".7"/>
+            <circle cx="40" cy="34" r="6"/><path d="M40 40 V54"/>
+            <circle cx="80" cy="30" r="6"/><path d="M80 36 V52"/>
+            <circle cx="118" cy="36" r="6"/><path d="M118 42 V54"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">FPD</span><span class="tc">1.6 · 0:30 · 6″</span></div>
+          <h4>Atelier participatif en plein air</h4>
+          <p>Étudiant·e·s et habitant·e·s annotent ensemble une grande carte. Le terrain devient une négociation.</p>
+          <span class="stat ok">Fonds existant</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEQ 2 -->
+  <div class="seq">
+    <div class="seq-head">
+      <div class="seq-num">02</div>
+      <h3 class="seq-title">La collecte — mesurer, enquêter</h3>
+      <div class="seq-time">0:36 → 1:12 · 36″</div>
+      <p class="seq-intent">Rupture de rythme, sons urbains, montage plus serré. Le chapitre démontre que la donnée est de deux natures : ce que l’instrument enregistre et ce que les gens racontent. Les six plans alternent délibérément l’une et l’autre.</p>
+      <p class="vo"><span>Voix off</span>« On mesure l’air, l’eau, les sols. Et on interroge celles et ceux qui y vivent. »</p>
+    </div>
+    <div class="grid6">
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Deux étudiantes avec une tablette interrogent une passante">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <circle cx="46" cy="30" r="7"/><path d="M46 37 V60 M46 60 L38 80 M46 60 L54 80 M46 44 L64 50"/>
+            <rect x="62" y="46" width="16" height="11" rx="1"/>
+            <circle cx="112" cy="32" r="7"/><path d="M112 39 V62 M112 62 L104 80 M112 62 L120 80 M112 46 L96 52"/>
+            <path d="M0 82 H160" opacity=".3"/><path d="M10 18 H32 M128 16 H150" opacity=".35"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">GEO</span><span class="tc">2.1 · 0:36 · 6″</span></div>
+          <h4>Enquête sur une place</h4>
+          <p>Questionnaire sur tablette auprès d’une passante, en pleine ville. Bribes d’échange audibles.</p>
+          <span class="stat ok">Fonds existant</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Capteur de qualité de l’air fixé sur un mât">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M50 84 V16"/><rect x="50" y="24" width="22" height="16" rx="1"/>
+            <path d="M80 24 q8 8 0 16 M88 18 q13 14 0 28" opacity=".7" stroke-dasharray="4 3"/>
+            <rect x="112" y="46" width="14" height="26"/><rect x="132" y="34" width="16" height="38"/>
+            <path d="M0 72 H160" opacity=".3"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">ENV</span><span class="tc">2.2 · 0:42 · 6″</span></div>
+          <h4>Capteur d’air sur mât</h4>
+          <p>Pose du capteur, puis timelapse de 2 s du trafic au même endroit : l’événement devient série.</p>
+          <span class="stat chk">À vérifier</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Comptage de visiteurs devant un site patrimonial">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M28 60 V26 L64 12 L100 26 V60" opacity=".7"/><path d="M28 60 H100" opacity=".7"/>
+            <path d="M44 60 V38 H56 V60 M72 60 V38 H84 V60" opacity=".5"/>
+            <path d="M112 40 H150 M112 52 H142 M112 64 H154" stroke-dasharray="5 4" opacity=".7"/>
+            <path d="M0 78 H160" opacity=".3"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">TOU</span><span class="tc">2.3 · 0:48 · 6″</span></div>
+          <h4>Comptage devant un site</h4>
+          <p>Flux de visiteurs relevé au pied d’un monument ; l’étudiant note, chronomètre en main.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Géoradar tracté sur une chaussée, couches du sous-sol">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M0 44 H160"/>
+            <rect x="52" y="28" width="30" height="14" rx="2"/><circle cx="58" cy="45" r="3"/><circle cx="76" cy="45" r="3"/>
+            <path d="M82 34 L104 22"/>
+            <path d="M0 56 q40 8 80 0 t80 0" opacity=".5" stroke-dasharray="4 4"/>
+            <path d="M0 68 q40 -8 80 0 t80 0" opacity=".35" stroke-dasharray="4 4"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">TER</span><span class="tc">2.4 · 0:54 · 6″</span></div>
+          <h4>Géoradar en ville</h4>
+          <p>Sous le bitume, la géologie : l’antenne avance, l’écran affiche les réflecteurs en direct.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Observation d’oiseaux dans un jardin urbain aux jumelles">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <circle cx="42" cy="34" r="7"/><path d="M42 41 V62 M42 62 L34 82 M42 62 L50 82"/>
+            <rect x="48" y="28" width="8" height="7" rx="1"/><rect x="58" y="28" width="8" height="7" rx="1"/><path d="M42 32 H48 M56 31 H58"/>
+            <path d="M104 24 q8 -8 16 0 q8 -8 16 0" opacity=".8"/>
+            <path d="M112 44 q8 -7 16 0 q8 -7 16 0" opacity=".5"/>
+            <path d="M0 74 H160 M20 82 H150" opacity=".3"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">BGS</span><span class="tc">2.5 · 1:00 · 6″</span></div>
+          <h4>Jardins urbains, oiseaux</h4>
+          <p>Observation et notation d’espèces dans un jardin cultivé en ville : la biodiversité comme donnée.</p>
+          <span class="stat ok">Fonds existant</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Séance de travail avec une commune autour d’un plan">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="20" y="10" width="42" height="26" rx="1" opacity=".55"/><path d="M28 36 V22 h10 v14" opacity=".5"/>
+            <path d="M24 58 H140 L148 68 H16 Z"/>
+            <path d="M50 58 L64 50 L104 52 L92 58" opacity=".7"/>
+            <circle cx="46" cy="40" r="6"/><path d="M46 46 V56"/>
+            <circle cx="86" cy="36" r="6"/><path d="M86 42 V54"/>
+            <circle cx="124" cy="42" r="6"/><path d="M124 48 V56"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">FPD</span><span class="tc">2.6 · 1:06 · 6″</span></div>
+          <h4>Séance avec une commune</h4>
+          <p>Étudiant·e·s face à des élus locaux, plan d’aménagement déplié : la donnée entre en discussion.</p>
+          <span class="stat ok">Fonds existant</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEQ 3 -->
+  <div class="seq">
+    <div class="seq-head">
+      <div class="seq-num">03</div>
+      <h3 class="seq-title">L’analyse — au labo, au séminaire</h3>
+      <div class="seq-time">1:12 → 1:48 · 36″</div>
+      <p class="seq-intent">Le cœur du film et son seul vrai argument : ici, on n’apprend pas des résultats, on les défend. Chaque plan reprend l’objet rapporté du chapitre 1 ou 2 par la même filière — c’est ce raccord qui donne au montage sa nécessité.</p>
+      <p class="vo"><span>Voix off</span>« Et puis il faut convaincre une salle. C’est là que le travail devient de la science. »</p>
+    </div>
+    <div class="grid6">
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Lame mince observée au microscope polarisant">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M64 76 H116 M90 76 V52 M90 52 q-16 -4 -16 -18 V18 h16"/>
+            <rect x="70" y="14" width="18" height="10" rx="2"/>
+            <path d="M74 52 H108" opacity=".6"/>
+            <circle cx="34" cy="40" r="18" opacity=".8"/><path d="M22 30 L46 50 M46 30 L22 50" opacity=".45"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">TER</span><span class="tc">3.1 · 1:12 · 6″</span></div>
+          <h4>Lame mince au microscope</h4>
+          <p>La roche du plan 1.1 revient en lumière polarisée : couleurs d’interférence plein cadre.</p>
+          <span class="stat chk">À vérifier</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Paillasse de laboratoire, loupe binoculaire et boîtes d’échantillons">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M0 72 H160"/>
+            <path d="M46 72 V42 q0 -10 12 -12 M40 72 H60"/><rect x="44" y="22" width="20" height="10" rx="2"/>
+            <circle cx="102" cy="60" r="10"/><circle cx="126" cy="62" r="8" opacity=".7"/>
+            <path d="M96 34 V48 M92 48 H100 M96 20 V34" opacity=".8"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">BGS</span><span class="tc">3.2 · 1:18 · 6″</span></div>
+          <h4>Paillasse, loupe binoculaire</h4>
+          <p>Tri et détermination sous binoculaire ; la carotte du plan 1.2 devient une série d’échantillons.</p>
+          <span class="stat ok">Fonds existant</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Analyse d’échantillons sous une hotte de laboratoire">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="26" y="12" width="108" height="52" rx="1"/><path d="M26 30 H134" opacity=".5"/>
+            <path d="M56 64 V44 h10 v20 M84 64 V38 h10 v26 M112 64 V48 h10 v16" opacity=".8"/>
+            <path d="M14 72 H146" /><path d="M40 72 V82 M120 72 V82" opacity=".5"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">ENV</span><span class="tc">3.3 · 1:24 · 6″</span></div>
+          <h4>Analyse sous la hotte</h4>
+          <p>Les flacons prélevés en rivière passent en analyse : gestes précis, gants, étiquettes.</p>
+          <span class="stat chk">À vérifier</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Écran affichant des couches SIG qui s’empilent">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="22" y="12" width="116" height="56" rx="2"/><path d="M68 68 H92 M58 78 H102"/>
+            <path d="M44 46 L80 32 L116 46 L80 60 Z"/>
+            <path d="M44 38 L80 24 L116 38" opacity=".6"/><path d="M44 30 L80 16 L116 30" opacity=".35"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">GEO</span><span class="tc">3.4 · 1:30 · 6″</span></div>
+          <h4>Couches SIG à l’écran</h4>
+          <p>Les couches se superposent jusqu’à faire apparaître un motif. Seul plan graphique du film, tenu court.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Mur de post-its pour le codage d’entretiens qualitatifs">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="24" y="12" width="16" height="16"/><rect x="46" y="14" width="16" height="16" opacity=".8"/><rect x="68" y="10" width="16" height="16" opacity=".6"/>
+            <rect x="24" y="36" width="16" height="16" opacity=".7"/><rect x="46" y="38" width="16" height="16"/><rect x="68" y="34" width="16" height="16" opacity=".5"/>
+            <circle cx="120" cy="34" r="7"/><path d="M120 41 V62 M120 62 L112 82 M120 62 L128 82 M120 46 L100 40"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">TOU</span><span class="tc">3.5 · 1:36 · 6″</span></div>
+          <h4>Dépouillement d’entretiens</h4>
+          <p>Codage qualitatif au mur : les récits de visiteurs deviennent des catégories d’analyse.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Séminaire, une étudiante debout argumente devant la table">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <ellipse cx="80" cy="60" rx="46" ry="15"/>
+            <circle cx="40" cy="44" r="5"/><path d="M40 49 V58"/>
+            <circle cx="62" cy="38" r="5"/><path d="M62 43 V54"/>
+            <circle cx="104" cy="38" r="5"/><path d="M104 43 V54"/>
+            <circle cx="126" cy="46" r="5"/><path d="M126 51 V60"/>
+            <circle cx="84" cy="20" r="6"/><path d="M84 26 V50 M84 32 L68 26 M84 32 L100 28"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">FPD</span><span class="tc">3.6 · 1:42 · 6″</span></div>
+          <h4>Controverse en séminaire</h4>
+          <p>Une étudiante défend un résultat debout ; la caméra garde les réactions autant que l’oratrice.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEQ 4 -->
+  <div class="seq">
+    <div class="seq-head">
+      <div class="seq-num">04</div>
+      <h3 class="seq-title">Le campus — Géopolis et la communauté</h3>
+      <div class="seq-time">1:48 → 2:20 · 32″</div>
+      <p class="seq-intent">Respiration finale : la musique prend le dessus, le son direct s’efface. C’est le seul chapitre où la règle des six s’assouplit — les cohortes se mélangent volontairement à l’image, et ce sont les lieux qui portent l’identité des filières. Le carton final nomme les six masters.</p>
+      <p class="vo"><span>Voix off — dernière ligne</span>« Six masters, une même faculté. Le terrain commence ici. »</p>
+    </div>
+    <div class="grid6">
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Façade de Géopolis avec un flux d’étudiants sur le parvis">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M24 70 V22 H136 V70"/><path d="M24 34 H136 M24 46 H136 M24 58 H136" opacity=".4"/>
+            <path d="M52 22 V70 M80 22 V70 M108 22 V70" opacity=".4"/><path d="M0 70 H160"/>
+          </g>
+          <g fill="currentColor"><circle cx="44" cy="77" r="3"/><circle cx="64" cy="79" r="3"/><circle cx="98" cy="77" r="3"/><circle cx="120" cy="80" r="3"/></g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">GEO</span><span class="tc">4.1 · 1:48 · 6″</span></div>
+          <h4>Parvis de Géopolis</h4>
+          <p>Plan fixe en légère contre-plongée, flux traversant. Un seul plan suffit à identifier le bâtiment.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Atrium intérieur avec vitrines d’échantillons et panneaux des instituts">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M10 8 L52 26 V74 L10 84 Z" opacity=".55"/><path d="M150 8 L108 26 V74 L150 84 Z" opacity=".55"/>
+            <rect x="62" y="30" width="16" height="26"/><rect x="84" y="30" width="16" height="26"/>
+            <path d="M66 38 H74 M88 44 H96" opacity=".6"/>
+            <path d="M52 74 H108" />
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">TER</span><span class="tc">4.2 · 1:54 · 5″</span></div>
+          <h4>Vitrines de roches, atrium</h4>
+          <p>Travelling latéral devant les collections et les panneaux des instituts. Une photographie de l’exposition de posters couvre le décor, mais aucune image animée du hall n’existe.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Terrasse du Zelig, tables et groupes d’étudiants">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M8 14 H152 M20 14 V22 M140 14 V22" opacity=".5"/>
+            <ellipse cx="46" cy="56" rx="18" ry="6"/><path d="M46 62 V74"/>
+            <ellipse cx="112" cy="62" rx="20" ry="6"/><path d="M112 68 V80"/>
+            <circle cx="30" cy="38" r="5"/><path d="M30 43 V54"/>
+            <circle cx="62" cy="36" r="5"/><path d="M62 41 V52"/>
+            <circle cx="98" cy="42" r="5"/><path d="M98 47 V60"/>
+            <circle cx="130" cy="44" r="5"/><path d="M130 49 V62"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">TOU</span><span class="tc">4.3 · 1:59 · 6″</span></div>
+          <h4>Terrasse, Zelig</h4>
+          <p>Cafés, discussion, affiche d’événement étudiant. Le seul endroit du film où l’on peut sourire à la caméra.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Salle de travail éclairée le soir, écrans allumés">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="18" y="34" width="30" height="20" rx="1"/><rect x="64" y="30" width="30" height="20" rx="1"/><rect x="110" y="36" width="30" height="20" rx="1"/>
+            <path d="M0 66 H160" opacity=".5"/>
+            <circle cx="34" cy="20" r="5"/><circle cx="80" cy="16" r="5"/><circle cx="126" cy="22" r="5"/>
+            <path d="M34 25 V32 M80 21 V28 M126 27 V34" opacity=".7"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">BGS</span><span class="tc">4.4 · 2:05 · 5″</span></div>
+          <h4>Salle de travail, le soir</h4>
+          <p>Écrans allumés, mémoire en cours de rédaction. Rappelle que le master est aussi un long travail solitaire.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Sortie du campus à vélo avec le lac en arrière-plan">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M0 30 L26 16 L50 30 L78 12 L106 30 L132 20 L160 32" opacity=".4"/>
+            <path d="M0 42 H160" opacity=".45"/>
+            <circle cx="52" cy="68" r="11"/><circle cx="102" cy="68" r="11"/>
+            <path d="M52 68 L70 48 H86 L102 68 M70 48 L84 68 M86 46 H96"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">ENV</span><span class="tc">4.5 · 2:10 · 5″</span></div>
+          <h4>Sortie du campus, vélos</h4>
+          <p>Départ à vélo, le lac et les Alpes derrière : le paysage du chapitre 1 réapparaît en fond de campus.</p>
+          <span class="stat todo">À tourner</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <svg class="frame" viewBox="0 0 160 90" role="img" aria-label="Carton final avec le logo et les six intitulés de master">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <circle cx="34" cy="30" r="12"/>
+            <path d="M58 26 H130 M58 36 H108" opacity=".85"/>
+            <path d="M34 56 H126 M34 64 H112 M34 72 H130 M34 80 H100" opacity=".45"/>
+          </g>
+        </svg>
+        <div class="card-body">
+          <div class="card-top"><span class="code">FPD</span><span class="tc">4.6 · 2:15 · 5″</span></div>
+          <h4>Carton final, les six noms</h4>
+          <p>Fondu au blanc, logo Unil · FGSE, les six intitulés de master et l’adresse de la page des formations.</p>
+          <span class="stat todo">À produire</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+
+
+
+
+
+
+<section>
+  <h2>Où en est le matériel</h2>
+  <p class="lede">Quatre des six filières disposent aujourd’hui d’images exploitables, issues de fonds existants : des films réalisés par des étudiant·e·s dans le cadre d’un séminaire, des captations d’ateliers de projet d’urbanisme menés avec des collectivités, les vidéos du master conjoint avec une université partenaire, un film de terrain issu d’un projet de recherche, et la chaîne vidéo d’un laboratoire. S’y ajoutent des photographies de terrain en haute définition, récupérées dans les présentations des Journées Découverte.</p>
+  <p class="lede">Deux filières n’ont encore rien de recensé. Les images d’archives, quand elles servent, sont réservées aux plans de terrain et de laboratoire — jamais à l’ouverture ni à la fin, où l’écart de texture se verrait.</p>
+  <div class="callout">
+    <h3>Le point bloquant n’est pas le budget, c’est la saison</h3>
+    <p>Les terrains avec les étudiant·e·s sont pratiquement terminés pour cette année. Le chapitre 1, celui qui ouvre le film, ne peut donc plus être tourné avant la prochaine saison. Deux issues seulement : le construire à partir des fonds existants, ou repousser la livraison après les terrains du printemps et de l’été 2027.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <h2>Les deux calendriers possibles</h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Scénario</th><th>Chapitre 1</th><th>Tournages neufs</th><th>Livraison</th><th>Risque</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>A — Montage d’archives</strong></td>
+          <td>Entièrement issu des fonds existants des filières</td>
+          <td>Campus et séminaires uniquement, tournables toute l’année à Géopolis</td>
+          <td class="mono">Printemps 2027</td>
+          <td>Écart de texture entre sources ; rien pour le master en études du tourisme</td>
+        </tr>
+        <tr>
+          <td><strong>B — Attendre les terrains</strong></td>
+          <td>Tourné pendant les camps et terrains du printemps et de l’été 2027</td>
+          <td>Les six filières, avec un cadreur dédié</td>
+          <td class="mono">Automne 2027</td>
+          <td>Une année de plus sans film ; mobilisation des enseignant·e·s à obtenir maintenant</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <h3>Recommandation</h3>
+    <p>Scénario A, à une condition : que le tournage des chapitres 3 et 4 — laboratoire, séminaire, campus — soit fait proprement cet automne. Ce sont les plans qui donnent au film son unité visuelle, et ce sont précisément ceux qui ne dépendent d’aucune saison. Les archives ne serviraient alors qu’au chapitre 1, là où l’hétérogénéité passe pour de la variété de terrains.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+
+
+<section>
+  <h2>Ce qu’il reste à trancher — décanat</h2>
+  <ul class="decisions">
+    <li class="dec">
+      <h3>La date de livraison — urgent</h3>
+      <p>Les enseignant·e·s attendent une échéance avant de fouiller leurs fonds et de mobiliser leurs collègues. Sans date, la collecte s’arrête.</p>
+      <p class="reco"><b>Décision demandée cette semaine :</b> scénario A, livraison au printemps 2027, ou scénario B, à l’automne 2027.</p>
+    </li>
+    <li class="dec">
+      <h3>La durée</h3>
+      <p>Vingt-quatre plans imposent 2′20″. Rester à 1′50″ obligerait à supprimer un chapitre ou à ne montrer que quatre masters sur six.</p>
+      <p class="reco"><b>Recommandation :</b> accepter 2′20″ pour le master 16:9, et produire des versions courtes de 30″ pour les réseaux.</p>
+    </li>
+    <li class="dec">
+      <h3>Archives ou tournage homogène ?</h3>
+      <p>Mélanger des images existantes (biogéosciences, géographie) et des plans neufs crée un écart de texture visible à l’image.</p>
+      <p class="reco"><b>Recommandation :</b> réserver les archives aux plans de terrain et de labo, jamais aux plans d’ouverture ni de fin, et unifier par l’étalonnage.</p>
+    </li>
+    <li class="dec">
+      <h3>Droits sur les films étudiants</h3>
+      <p>Une partie des images disponibles sont des œuvres d’étudiant·e·s, diffusées sous leur nom.</p>
+      <p class="reco"><b>À faire avant tout montage :</b> accord écrit des auteur·e·s, et mention au générique.</p>
+    </li>
+    <li class="dec">
+      <h3>Voix off ou témoignages ?</h3>
+      <p>Le découpage repose sur quatre lignes de voix off plutôt que sur des interviews face caméra. Or le film bachelor de 2024, lui, est entièrement bâti sur des témoignages d’étudiant·e·s filmés en vertical devant leur poster, entrecoupés de cartons verts. C’est le langage visuel que la Faculté s’est donné.</p>
+      <p class="reco"><b>Décision demandée :</b> prolonger ce langage, ou en changer pour les masters. Je recommande d’en changer — le film bachelor répond à « qui es-tu ? », celui des masters doit répondre à « qu’est-ce qu’on y fait ? », et le geste se filme mieux qu’il ne se raconte.</p>
+    </li>
+    <li class="dec">
+      <h3>Le site de Sion</h3>
+      <p>Un des six masters est enseigné à Sion : quatre plans sur vingt-quatre s’y situent.</p>
+      <p class="reco"><b>Décision demandée :</b> une journée de tournage dédiée, ou un rabattement sur des situations lausannoises.</p>
+    </li>
+    <li class="dec">
+      <h3>Réalisation</h3>
+      <p>Des tournages étudiants sont déjà accompagnés en interne ; un mandat externe reste possible.</p>
+      <p class="reco"><b>Point ouvert :</b> budget, prestataire, et centralisation des fichiers sources des six filières.</p>
+    </li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Storyboard, version de travail. Ce document expose le parti pris narratif et le découpage proposés ; le recensement détaillé du matériel, les contacts et les arbitrages internes n’y figurent pas. Les vignettes sont des schémas de cadrage, pas des références visuelles ; les durées sont indicatives et à ajuster au montage. Document sans caractère officiel.</p>
+  </div>
+</footer>
+</body>
+</html>
