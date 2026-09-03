@@ -23,5 +23,18 @@
     ],
     "date": "2026-09-03",
     "statut": "brouillon"
+  },
+  {
+    "titre": "Quizz rentrée académique 2026–2027",
+    "url": "quiz-rentree-fgse/",
+    "description": "Six questions sur la propédeutique de la Faculté des géosciences et de l’environnement : modules, orientations, réussite, échec et inscriptions. Une question à la fois, avec la réponse commentée.",
+    "tags": [
+      "Quiz",
+      "UNIL",
+      "FGSE",
+      "JS"
+    ],
+    "date": "2026-09-03",
+    "statut": "en ligne"
   }
 ]

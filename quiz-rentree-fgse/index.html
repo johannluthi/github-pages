@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quizz rentrée académique 2026–2027</title>
+<meta name="description" content="Six questions pour vérifier l'essentiel de la propédeutique : modules, orientations, réussite, échec et inscriptions.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --brand:#0037eb; --marine:#002664; --on-blue:#ffffff;
+  --bg:#f4f7fa; --surface:#ffffff; --surface-2:#eff3f6;
+  --ink:#0a1f30; --ink-2:#4b6373; --ink-3:#7b909e;
+  --line:#d6dee6; --line-soft:#e6ecf1;
+  --ok-bg:#e4f0e8; --ok-line:#2e7d51; --ok-ink:#1d5c39;
+  --ko-bg:#f7e7e7; --ko-line:#b4413c; --ko-ink:#8d2f2b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+a{color:var(--brand)}
+:focus-visible{outline:none;box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--brand);border-radius:2px}
+
+.band-marine{background:var(--marine);height:8px}
+.band-brand{background:var(--brand);color:var(--on-blue)}
+.band-brand .wrap{padding-top:10px;padding-bottom:10px}
+.band-brand .fac{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+
+.hero{background:var(--marine);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{padding:40px 20px 34px;position:relative;z-index:1}
+.hero-circle{position:absolute;right:-90px;top:-120px;width:320px;height:320px;border-radius:50%;background:var(--brand);opacity:.9}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#a9c0ff;margin:0 0 12px}
+h1{font-size:clamp(30px,5.5vw,48px);line-height:1.03;letter-spacing:-.03em;margin:0;font-weight:700;text-wrap:balance}
+.hero p{max-width:38em;margin:14px 0 0;color:#d3e0f2;font-size:16.5px}
+
+main{padding:34px 0 56px}
+
+/* progression */
+.progress{display:flex;align-items:center;gap:14px;margin:0 0 22px}
+.progress .lbl{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brand);width:0;transition:width .35s ease}
+
+/* carte question */
+.card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--marine);border-radius:2px;padding:26px 24px 24px}
+.qnum{font-family:"JetBrains Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.08em;color:var(--brand);margin:0 0 10px;text-transform:uppercase}
+.qtext{font-size:clamp(20px,3vw,25px);line-height:1.28;letter-spacing:-.02em;margin:0;font-weight:600;text-wrap:pretty}
+.hint{margin:10px 0 0;font-size:13.5px;color:var(--ink-3)}
+
+.options{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.opt{width:100%;display:flex;gap:13px;align-items:flex-start;text-align:left;font:inherit;color:inherit;
+     background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:13px 15px;cursor:pointer;
+     transition:border-color .15s ease,background .15s ease}
+.opt:hover:not(:disabled){border-color:var(--brand);background:var(--surface-2)}
+.opt:disabled{cursor:default}
+.opt .k{flex:none;width:26px;height:26px;display:grid;place-items:center;border:1px solid var(--line);border-radius:2px;
+        font-family:"JetBrains Mono",monospace;font-size:12.5px;font-weight:600;color:var(--ink-2);background:var(--surface-2)}
+.opt .t{flex:1;font-size:15.8px;line-height:1.45}
+.opt .mark{flex:none;font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:600;opacity:0;white-space:nowrap;padding-top:3px}
+.opt.is-ok{border-color:var(--ok-line);background:var(--ok-bg)}
+.opt.is-ok .k{border-color:var(--ok-line);background:var(--ok-line);color:#fff}
+.opt.is-ok .mark{opacity:1;color:var(--ok-ink)}
+.opt.is-ko{border-color:var(--ko-line);background:var(--ko-bg)}
+.opt.is-ko .k{border-color:var(--ko-line);background:var(--ko-line);color:#fff}
+.opt.is-ko .mark{opacity:1;color:var(--ko-ink)}
+.opt.is-dim{opacity:.55}
+
+/* retour */
+.feedback{margin:22px 0 0;border-left:3px solid var(--brand);background:var(--surface-2);padding:15px 17px;border-radius:0 2px 2px 0}
+.feedback .verdict{display:block;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px}
+.feedback.ok .verdict{color:var(--ok-ink)}
+.feedback.ko .verdict{color:var(--ko-ink)}
+.feedback.ok{border-left-color:var(--ok-line)}
+.feedback.ko{border-left-color:var(--ko-line)}
+.feedback p{margin:0;font-size:15.5px;color:var(--ink);max-width:60ch}
+.feedback p + p{margin-top:8px;color:var(--ink-2);font-size:14.5px}
+
+.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:24px 0 0}
+.btn{font:inherit;font-weight:600;font-size:15.5px;border:1px solid var(--brand);background:var(--brand);color:#fff;
+     padding:11px 20px;border-radius:2px;cursor:pointer}
+.btn:hover{background:#0030cf;border-color:#0030cf}
+.btn.ghost{background:transparent;color:var(--brand)}
+.btn.ghost:hover{background:var(--surface-2)}
+.kbd{font-size:13px;color:var(--ink-3)}
+.kbd b{font-family:"JetBrains Mono",monospace;font-weight:600;border:1px solid var(--line);background:var(--surface-2);
+       border-radius:2px;padding:1px 5px;color:var(--ink-2)}
+
+/* écran final */
+.score{font-family:"JetBrains Mono",monospace;font-size:clamp(46px,11vw,76px);font-weight:600;line-height:1;
+       letter-spacing:-.04em;color:var(--brand);font-variant-numeric:tabular-nums;margin:6px 0 0}
+.score span{color:var(--ink-3);font-size:.42em}
+.recap{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.recap li{display:flex;gap:11px;align-items:baseline;font-size:15px;border-bottom:1px solid var(--line-soft);padding-bottom:8px}
+.recap li:last-child{border-bottom:0}
+.recap .st{flex:none;width:22px;height:22px;display:grid;place-items:center;border-radius:2px;font-family:"JetBrains Mono",monospace;
+           font-size:12px;font-weight:600;color:#fff}
+.recap .st.ok{background:var(--ok-line)}
+.recap .st.ko{background:var(--ko-line)}
+.recap .lb{flex:1;color:var(--ink-2);line-height:1.4}
+
+footer{border-top:1px solid var(--line);padding:22px 0 40px}
+footer p{margin:0;font-size:13px;color:var(--ink-3);max-width:70ch}
+footer p + p{margin-top:6px}
+
+@media (max-width:520px){
+  .card{padding:20px 16px}
+  .opt{padding:12px}
+  .actions .kbd{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="band-marine"></div>
+<div class="band-brand"><div class="wrap"><span class="fac">Faculté des géosciences et de l’environnement</span></div></div>
+
+<header class="hero">
+  <div class="hero-circle" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Propédeutique · Baccalauréat universitaire</p>
+    <h1>Quizz rentrée académique 2026–2027</h1>
+    <p>Six questions pour vérifier l’essentiel : modules, choix d’orientation, réussite, échec et inscriptions. Une question à la fois, la réponse s’affiche tout de suite.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="progress" id="progress">
+    <span class="lbl" id="plabel">Question 1 / 6</span>
+    <span class="bar"><i id="pbar"></i></span>
+  </div>
+  <div id="app" aria-live="polite"></div>
+</main>
+
+<footer><div class="wrap">
+  <p>Quiz d’accueil à visée pédagogique. En cas de doute, les règles qui font foi sont celles du règlement d’études et du plan d’études de la Faculté.</p>
+  <p>Page personnelle, sans lien officiel avec l’Université de Lausanne.</p>
+</div></footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var QUESTIONS = [
+    {
+      q:"Combien y a-t-il de modules à valider lors de la propédeutique ?",
+      options:["2","4","6"],
+      correct:[1],
+      answer:"<b>4 modules</b> à valider entre le semestre d’automne (SA) et le semestre de printemps (SP), pour un total de <b>60 ECTS</b>.",
+      recap:"4 modules, 60 ECTS sur l’année"
+    },
+    {
+      q:"Comment choisir mon orientation entre géographie, sciences de l’environnement et géologie ?",
+      options:[
+        "En m’inscrivant sur Moodle.",
+        "En écrivant un email au secrétariat.",
+        "En m’inscrivant aux cours par mon compte MyUnil."
+      ],
+      correct:[2],
+      answer:"Le choix de l’orientation se fait <b>au niveau des modules, depuis votre compte MyUnil</b>.",
+      note:"Il peut être modifié au semestre de printemps, selon les orientations.",
+      recap:"L’orientation se choisit sur MyUnil"
+    },
+    {
+      q:"J’hésite entre l’orientation géologie et sciences de l’environnement et géographie et sciences de l’environnement. Que dois-je faire ?",
+      options:[
+        "Suivre les excursions en sciences de l’environnement au semestre d’automne.",
+        "Suivre seulement les cours de mon orientation.",
+        "Suivre le cours éléments d’écologie, en plus de mon cursus."
+      ],
+      correct:[0],
+      answer:"Suivre les <b>excursions en sciences de l’environnement</b>, dans le <b>module 2</b>.",
+      note:"Si vous n’arrivez pas à le faire, un travail complémentaire vous sera demandé pendant le semestre de printemps de 1ʳᵉ année, sur un thème communiqué par les enseignant·es responsables des excursions.",
+      recap:"Excursions en sciences de l’environnement (module 2)"
+    },
+    {
+      q:"Qu’est-ce qu’un module réussi ?",
+      options:[
+        "Un module est réussi lorsque toutes mes évaluations du module ont une note supérieure à 4.00.",
+        "Un module est réussi lorsque la moyenne du module est égale ou supérieure à 4.00.",
+        "Un module est réussi lorsqu’il n’y a pas de note en dessous de 3.00."
+      ],
+      correct:[1],
+      answer:"Un module est réussi lorsque <b>la moyenne du module est égale ou supérieure à 4.00</b>.",
+      note:"C’est la moyenne qui compte : une note isolée sous 4.00 ne fait pas échouer le module.",
+      recap:"Moyenne du module ≥ 4.00"
+    },
+    {
+      q:"Mon module est en échec. Quelles sont mes alternatives ?",
+      options:[
+        "Resuivre tous les cours l’année prochaine et revalider toutes les évaluations, quelle que soit la note.",
+        "Choisir les notes de son choix en dessous de 4.00 et les repasser à la session de rattrapage ou à la session usuelle (hiver ou été).",
+        "Repasser toutes les notes en dessous de 4.00 à la session de rattrapage, ou suivre les cours l’année suivante et repasser les évaluations à la session d’hiver ou à la session d’été."
+      ],
+      correct:[2],
+      answer:"Vous devez repasser <b>toutes</b> les notes en dessous de 4.00 du module en échec.",
+      note:"Les notes égales ou supérieures à 4.00 restent acquises. La note de la deuxième tentative est celle reprise dans le calcul de la moyenne.",
+      recap:"Toutes les notes < 4.00 sont à repasser"
+    },
+    {
+      q:"Quelle est la priorité jusqu’au 11 octobre 2026 ?",
+      options:[
+        "Suivre le compte FGSE sur Instagram.",
+        "S’abonner aux Moodles des cours.",
+        "S’inscrire aux enseignements et évaluations sur MyUnil."
+      ],
+      correct:[0,1,2],
+      all:true,
+      answer:"<b>Les 3</b> 😉",
+      note:"La plus urgente reste l’inscription aux enseignements et aux évaluations sur MyUnil : le délai du 11 octobre 2026 ne se rattrape pas.",
+      recap:"Les 3 — et surtout les inscriptions sur MyUnil"
+    }
+  ];
+
+  var KEYS = ["a","b","c","d","e"];
+  var app = document.getElementById("app");
+  var pbar = document.getElementById("pbar");
+  var plabel = document.getElementById("plabel");
+  var progress = document.getElementById("progress");
+
+  var i = 0;              // index de la question courante
+  var answered = false;   // la question courante a-t-elle été répondue
+  var results = [];       // true/false par question
+  var started = false;    // évite de voler le focus (et de faire défiler) au chargement
+
+  function el(tag, cls, txt){
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (txt != null) n.textContent = txt;
+    return n;
+  }
+
+  var SMOOTH = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+
+  // Défilement piloté par une cible chiffrée : le lissé est un bonus, jamais
+  // une dépendance (un onglet en arrière-plan suspend l'animation → repli sec).
+  function scrollToY(y){
+    var max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    y = Math.max(0, Math.min(Math.round(y), max));
+    if (Math.abs(window.scrollY - y) < 2) return;
+    try { window.scrollTo({top:y, behavior:SMOOTH}); }
+    catch (err) { window.scrollTo(0, y); }
+    if (SMOOTH === "smooth"){
+      setTimeout(function(){
+        if (Math.abs(window.scrollY - y) > 4) window.scrollTo(0, y);
+      }, 450);
+    }
+  }
+
+  // amène le BAS de l'élément dans le champ de vision : sur mobile le bouton
+  // « question suivante » tombe sinon sous la ligne de flottaison.
+  function revealBottom(node){
+    if (!node) return;
+    var over = node.getBoundingClientRect().bottom - (window.innerHeight - 12);
+    if (over > 0) scrollToY(window.scrollY + over);
+  }
+
+  // remonte sur l'énoncé si le haut de la carte est passé au-dessus de l'écran.
+  function revealTop(node){
+    if (!node) return;
+    var top = node.getBoundingClientRect().top;
+    if (top < 0) scrollToY(window.scrollY + top - 12);
+  }
+
+  function setProgress(){
+    progress.style.display = "";
+    plabel.textContent = "Question " + (i + 1) + " / " + QUESTIONS.length;
+    pbar.style.width = ((answered ? i + 1 : i) / QUESTIONS.length * 100) + "%";
+  }
+
+  function render(){
+    var Q = QUESTIONS[i];
+    answered = false;
+    setProgress();
+    app.innerHTML = "";
+
+    var card = el("div", "card");
+    card.appendChild(el("p", "qnum", "Question " + (i + 1)));
+    card.appendChild(el("h2", "qtext", Q.q));
+
+    var ul = el("ul", "options");
+    Q.options.forEach(function(text, k){
+      var li = el("li");
+      var b = el("button", "opt");
+      b.type = "button";
+      b.appendChild(el("span", "k", KEYS[k] + "."));
+      b.appendChild(el("span", "t", text));
+      b.appendChild(el("span", "mark", ""));
+      b.addEventListener("click", function(){ choose(k); });
+      li.appendChild(b);
+      ul.appendChild(li);
+    });
+    card.appendChild(ul);
+
+    var slot = el("div");
+    slot.id = "slot";
+    card.appendChild(slot);
+
+    app.appendChild(card);
+    if (started){
+      var first = app.querySelector(".opt");
+      if (first) first.focus({preventScroll:true});
+      revealTop(card);
+    }
+    started = true;
+  }
+
+  function choose(k){
+    if (answered) return;
+    answered = true;
+
+    var Q = QUESTIONS[i];
+    var ok = Q.correct.indexOf(k) !== -1;
+    results[i] = ok;
+
+    var btns = app.querySelectorAll(".opt");
+    Array.prototype.forEach.call(btns, function(b, n){
+      b.disabled = true;
+      var isCorrect = Q.correct.indexOf(n) !== -1;
+      if (isCorrect){
+        b.classList.add("is-ok");
+        b.querySelector(".mark").textContent = "✓";
+      } else if (n === k){
+        b.classList.add("is-ko");
+        b.querySelector(".mark").textContent = "✗";
+      } else {
+        b.classList.add("is-dim");
+      }
+    });
+
+    var fb = el("div", "feedback " + (ok ? "ok" : "ko"));
+    var verdict = el("strong", "verdict", Q.all ? "Bien vu — et les autres aussi" : (ok ? "Correct" : "Pas tout à fait"));
+    fb.appendChild(verdict);
+    var p = el("p");
+    p.innerHTML = Q.answer;
+    fb.appendChild(p);
+    if (Q.note){
+      var p2 = el("p");
+      p2.innerHTML = Q.note;
+      fb.appendChild(p2);
+    }
+
+    var acts = el("div", "actions");
+    var next = el("button", "btn", i + 1 < QUESTIONS.length ? "Question suivante" : "Voir mon résultat");
+    next.type = "button";
+    next.addEventListener("click", advance);
+    acts.appendChild(next);
+    var kbd = el("span", "kbd");
+    kbd.innerHTML = "ou touche <b>Entrée</b>";
+    acts.appendChild(kbd);
+
+    var slot = document.getElementById("slot");
+    slot.appendChild(fb);
+    slot.appendChild(acts);
+
+    setProgress();
+    next.focus({preventScroll:true});
+    revealBottom(acts);
+  }
+
+  function advance(){
+    if (i + 1 < QUESTIONS.length){ i++; render(); }
+    else finish();
+  }
+
+  function finish(){
+    var good = results.filter(Boolean).length;
+    var total = QUESTIONS.length;
+    progress.style.display = "none";
+    app.innerHTML = "";
+
+    var card = el("div", "card");
+    card.appendChild(el("p", "qnum", "Résultat"));
+
+    var sc = el("p", "score");
+    sc.appendChild(document.createTextNode(String(good)));
+    sc.appendChild(el("span", null, " / " + total));
+    card.appendChild(sc);
+
+    var msg;
+    if (good === total) msg = "Sans faute. L’essentiel de la propédeutique est en place — il ne reste plus qu’à ne pas manquer le délai du 11 octobre 2026.";
+    else if (good >= total - 2) msg = "Bonne base. Relisez les points manqués ci-dessous : ce sont exactement ceux qui coûtent cher au moment des sessions.";
+    else msg = "À revoir tranquillement. Les règles de modules et de sessions se lisent dans le règlement d’études ; le secrétariat de la Faculté répond aussi aux questions.";
+    var m = el("p", "hint", msg);
+    m.style.fontSize = "15.5px";
+    m.style.color = "var(--ink-2)";
+    m.style.maxWidth = "60ch";
+    card.appendChild(m);
+
+    var ul = el("ul", "recap");
+    QUESTIONS.forEach(function(Q, n){
+      var li = el("li");
+      var st = el("span", "st " + (results[n] ? "ok" : "ko"), results[n] ? "✓" : "✗");
+      li.appendChild(st);
+      var lb = el("span", "lb");
+      lb.appendChild(el("b", null, "Q" + (n + 1) + " — "));
+      lb.appendChild(document.createTextNode(Q.recap));
+      li.appendChild(lb);
+      ul.appendChild(li);
+    });
+    card.appendChild(ul);
+
+    var acts = el("div", "actions");
+    var again = el("button", "btn ghost", "Recommencer");
+    again.type = "button";
+    again.addEventListener("click", function(){ i = 0; results = []; render(); });
+    acts.appendChild(again);
+    card.appendChild(acts);
+
+    app.appendChild(card);
+    again.focus({preventScroll:true});
+    revealTop(card);
+  }
+
+  document.addEventListener("keydown", function(e){
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var key = e.key.toLowerCase();
+    if (!answered){
+      var n = KEYS.indexOf(key);
+      if (n === -1 && /^[1-9]$/.test(key)) n = parseInt(key, 10) - 1;
+      var btns = app.querySelectorAll(".opt");
+      if (n >= 0 && n < btns.length){ e.preventDefault(); choose(n); }
+    } else if (key === "enter" || key === " "){
+      var btn = app.querySelector(".actions .btn");
+      if (btn && document.activeElement !== btn){ e.preventDefault(); btn.click(); }
+    }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
