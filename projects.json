@@ -36,5 +36,17 @@
     ],
     "date": "2026-09-03",
     "statut": "en ligne"
+  },
+  {
+    "titre": "Arbre des connaissances",
+    "url": "https://johannluthi.github.io/arbre-des-connaissances/",
+    "description": "Cartographie des savoirs et compétences enseignés en propédeutique à la Faculté des géosciences et de l’environnement, cours par cours.",
+    "tags": [
+      "UNIL",
+      "FGSE",
+      "Cartographie"
+    ],
+    "date": "2026-09-03",
+    "statut": "en ligne"
   }
 ]
