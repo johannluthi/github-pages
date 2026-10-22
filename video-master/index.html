@@ -134,6 +134,31 @@ footer p{margin:0;max-width:74ch}
   .seq-time{grid-column:2;justify-self:start;margin-top:8px}
   .seq-intent,.vo{grid-column:1/-1}
 }
+
+/* onglets par master */
+.tabs{margin-top:26px}
+.tablist{display:flex;flex-wrap:wrap;gap:6px;border-bottom:2px solid var(--line);padding-bottom:0}
+.tablist button{font:inherit;font-size:14px;font-weight:600;color:var(--ink-2);background:none;border:0;
+  border-bottom:3px solid transparent;padding:10px 14px;margin-bottom:-2px;cursor:pointer;border-radius:2px 2px 0 0}
+.tablist button:hover{color:var(--ink);background:var(--surface-2)}
+.tablist button[aria-selected="true"]{color:var(--brand-text);border-bottom-color:var(--brand)}
+.tabpanel{padding-top:26px}
+.tabpanel h3{margin:0 0 4px;font-size:22px;font-weight:600;letter-spacing:-.01em}
+.tabpanel .ref{margin:0 0 4px;font-size:12.5px;color:var(--ink-3);letter-spacing:.04em}
+.etat{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:2px;margin:6px 0 18px}
+.etat.ok{background:var(--ok-bg);color:var(--ok-ink)}
+.etat.att{background:var(--todo-bg);color:var(--todo-ink)}
+.soustitre{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);font-weight:600;margin:30px 0 12px}
+.texte{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:0 2px 2px 0;padding:18px 20px}
+.texte p{margin:0 0 10px}
+.texte p:last-child{margin-bottom:0}
+ul.mat{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+ul.mat li{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--ok-ink);border-radius:0 2px 2px 0;padding:13px 16px}
+ul.mat li.att{border-left-color:var(--todo-ink)}
+ul.mat li.ok{border-left-color:var(--brand)}
+ul.mat b{display:block;font-size:14.5px;margin-bottom:3px}
+ul.mat span{font-size:13.8px;color:var(--ink-2);line-height:1.5}
+@media (max-width:620px){ .tablist button{flex:1 1 auto;text-align:left} }
 </style>
 
 <div class="band-marine"></div>
@@ -326,31 +351,66 @@ footer p{margin:0;max-width:74ch}
 <hr class="rule">
 
 <section>
-  <h2>Six voix off, une minute chacune</h2>
-  <p class="lede">Première proposition, à amender par chaque coordination. Chaque texte suit les quatre temps du gabarit : l’enjeu de la discipline, la collecte des données, leur analyse, puis les études à Géopolis.</p>
+  <h2>Les six films, un onglet chacun</h2>
+  <p class="lede" style="margin-bottom:10px">Pour chaque master : le texte de la voix off dans son état du jour, puis le matériel réuni à ce jour. Les textes sont faits pour être raturés par les coordinations, pas acceptés.</p>
   <div class="callout" style="border-left-color:var(--ink-3)">
-    <h3>Deux règles d’écriture</h3>
-    <p>Une voix off ne décrit jamais ce que l’image montre déjà : elle dit ce que l’image ne peut pas dire. Elle ne nomme pas le programme d’études — elle nomme ce qu’on y fait. Et elle ne se termine pas sur une liste d’orientations ou de partenariats : le dernier mot revient à un lieu, parce que c’est une image, et qu’une image se retient.</p>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:18px;margin-top:22px">
-  <div class="callout" style="border-left-color:#1d5c39">
-    <h3>Sciences de la Terre <span style="font-size:12.5px;font-weight:400;color:#1d5c39;letter-spacing:.04em">— relu par la coordination</span></h3>
-    <p style="margin:-2px 0 12px;font-size:12.5px;color:var(--ink-3);letter-spacing:.04em">MSc · avec l’Université de Genève · en anglais</p>
-    <p style="margin:0 0 10px">Des profondeurs de la Terre au paléoclimat, des risques géologiques à la géoénergie et aux ressources minérales : la transition écologique et énergétique passe par la connaissance de ce qui est sous nos pieds et de l’histoire géologique, à toutes ses échelles.</p>
-    <p style="margin:0 0 10px">On va la chercher sur le terrain. Dans les Alpes, à une heure d’ici, et bien au-delà : au large du Groenland, sur un forage en Italie. On frappe la roche, on relève une mesure, on prélève une carotte.</p>
-    <p style="margin:0 0 10px">De retour, trois chemins pour une même question. Un échantillon de roche, qu’on passe au microscope et à la chimie. Une donnée acquise sur le terrain, qu’on traite et qu’on interprète, et des modèles numériques qui analysent.</p>
-    <p style="margin:0 0 10px">Ce master tient les trois ensemble. Il est conduit avec Genève, s’enseigne en anglais, et réunit des étudiant·e·s venus d’un peu partout. Les Alpes commencent à une heure de Géopolis.</p>
-    <p style="margin:12px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">151 mots · ≈ 60″</p>
+    <h3>Trois règles d’écriture</h3>
+    <p>Une voix off ne décrit jamais ce que l’image montre déjà : elle dit ce que l’image ne peut pas dire. Elle ne nomme pas le programme d’études, elle nomme ce qu’on y fait, et c’est pourquoi aucun de ces textes ne commence par « Le master en… ». Et elle ne se termine pas sur une liste : le dernier mot revient à un lieu, parce qu’une image se retient.</p>
   </div>
   <div class="callout">
-    <h3>Géographie, environnement et aménagement</h3>
-    <p style="margin:-2px 0 12px;font-size:12.5px;color:var(--ink-3);letter-spacing:.04em">MSc · Géopolis · français et anglais</p>
-    <p style="margin:0 0 10px">Un quartier qu’on densifie, une vallée qui se vide, une ligne de bus qu’on supprime. Derrière chacune de ces décisions il y a un projet de territoire, et quelqu’un qui l’a pensé.</p>
-    <p style="margin:0 0 10px">Alors on sort. On interroge un agriculteur au bord de son champ. On compte les passages sur une place un mardi, puis un samedi. On s’assied avec des habitants autour d’une carte dépliée.</p>
-    <p style="margin:0 0 10px">Ensuite les entretiens se codent, les relevés s’empilent en couches, et l’information géographique fait apparaître ce que personne, interrogé séparément, n’avait su dire.</p>
-    <p style="margin:0 0 10px">Puis chacun choisit sa voie. Dessiner un quartier qui tienne. Gérer une vallée de montagne. Travailler entre le Nord et le Sud. Modéliser un territoire pour le comprendre. Quatre spécialisations, toutes adossées à des projets réels.</p>
-    <p style="margin:0 0 10px">À Géopolis, le bureau voisin abrite un géologue ou une climatologue. On traverse un couloir pour changer d’échelle.</p>
-    <div class="tablewrap" style="margin-top:14px">
+    <h3>Nommer sans alourdir : le procédé du triplé</h3>
+    <p>Quand une filière couvre plusieurs approches ou spécialisations, les énoncer toutes alourdit la voix. On les nomme donc en groupes nominaux courts sur des plans de deux secondes, et <strong>l’intitulé officiel s’affiche à l’écran</strong> pendant que la voix dit le geste. Trois filières utilisent déjà ce procédé, et l’une des coordinations y est arrivée de son côté.</p>
+  </div>
+
+  <div class="tabs">
+    <div class="tablist" role="tablist" aria-label="Les six masters">
+      <button role="tab" id="t-ter" aria-controls="p-ter" aria-selected="true" tabindex="0">Sciences de la Terre</button>
+      <button role="tab" id="t-gea" aria-controls="p-gea" aria-selected="false" tabindex="-1">Géographie, env. et aménagement</button>
+      <button role="tab" id="t-env" aria-controls="p-env" aria-selected="false" tabindex="-1">Sciences de l’environnement</button>
+      <button role="tab" id="t-bgs" aria-controls="p-bgs" aria-selected="false" tabindex="-1">Biogéosciences</button>
+      <button role="tab" id="t-met" aria-controls="p-met" aria-selected="false" tabindex="-1">Études du tourisme</button>
+      <button role="tab" id="t-dts" aria-controls="p-dts" aria-selected="false" tabindex="-1">Durabilité</button>
+    </div>
+    <div class="tabpanel" role="tabpanel" id="p-ter" aria-labelledby="t-ter">
+      <h3>Sciences de la Terre</h3>
+      <p class="ref">MSc · avec l’Université de Genève · en anglais</p>
+      <span class="etat ok">Texte relu et validé par la coordination</span>
+
+      <p class="soustitre">Le texte, en l’état</p>
+      <div class="texte">
+        <p style="margin:0 0 10px">Des profondeurs de la Terre au paléoclimat, des risques géologiques à la géoénergie et aux ressources minérales : la transition écologique et énergétique passe par la connaissance de ce qui est sous nos pieds et de l’histoire géologique, à toutes ses échelles.</p>
+        <p style="margin:0 0 10px">On va la chercher sur le terrain. Dans les Alpes, à une heure d’ici, et bien au-delà : au large du Groenland, sur un forage en Italie. On frappe la roche, on relève une mesure, on prélève une carotte.</p>
+        <p style="margin:0 0 10px">De retour, trois chemins pour une même question. Un échantillon de roche, qu’on passe au microscope et à la chimie. Une donnée acquise sur le terrain, qu’on traite et qu’on interprète, et des modèles numériques qui analysent.</p>
+        <p style="margin:0 0 10px">Ce master tient les trois ensemble. Il est conduit avec Genève, s’enseigne en anglais, et réunit des étudiant·e·s venus d’un peu partout. Les Alpes commencent à une heure de Géopolis.</p>
+      </div>
+      
+      <p style="margin:10px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">148 mots</p>
+
+      <p class="soustitre">Le matériel réuni</p>
+      <p><strong>Film monté et publié</strong>, 60 secondes, visible en tête de cette page. C’est le seul des six à exister.</p>
+  <ul class="mat">
+    <li><b>Campagne océanographique au Groenland</b><span>Dix vidéos verticales en définition native et douze photographies haute définition. Montage, mise à l’eau et relevé des pompes, prélèvement d’eau, découpe de carotte sédimentaire, chimie à bord. Une capsule de 21 s en est tirée.</span></li>
+    <li><b>Projet de forage scientifique</b><span>Sept vidéos : opérations de foreuse, carottage, remontée et extraction de carotte, scanner de carotte, expériences sismiques. Une capsule de 18 s en est tirée. Le projet doit être crédité à l’écran, c’est une condition posée par la coordination.</span></li>
+    <li><b>Film de terrain sur un glissement de terrain</b><span>Version longue sous-titrée, et surtout une version courte de 42 s sans parole, livrée en 16:9 <em>et</em> en 9:16. Le seul apport déjà prêt pour les deux formats.</span></li>
+    <li><b>Camp de terrain alpin</b><span>Film de drone de 62 s déjà monté et sous-titré. Publiable tel quel. Réserve : c’est un camp de bachelor, donc vues aériennes oui, plans de groupe identifiables non.</span></li>
+    <li><b>Photographies de terrain</b><span>Dix-neuf images en 4608 × 3072 extraites des présentations de journées découverte : affleurements, relevés sur dalle, lame mince au microscope, paillasse.</span></li>
+    <li class="att"><b>Annoncé, pas encore reçu</b><span>Deux animations de modélisation glaciaire. C’est exactement le plan qui porte encore la mention « image provisoire » dans le film publié.</span></li>
+  </ul>
+    </div>
+    <div class="tabpanel" role="tabpanel" id="p-gea" aria-labelledby="t-gea" hidden>
+      <h3>Géographie, environnement et aménagement</h3>
+      <p class="ref">MSc · Géopolis · français et anglais</p>
+      <span class="etat att">Deux textes coexistent : celui de la coordination fait référence</span>
+
+      <p class="soustitre">Le texte, en l’état</p>
+      <div class="texte">
+        <p style="margin:0 0 10px">Un quartier qu’on densifie, une vallée qui se vide, une ligne de bus qu’on supprime. Derrière chacune de ces décisions il y a un projet de territoire, et quelqu’un qui l’a pensé.</p>
+        <p style="margin:0 0 10px">Alors on sort. On interroge un agriculteur au bord de son champ. On compte les passages sur une place un mardi, puis un samedi. On s’assied avec des habitants autour d’une carte dépliée.</p>
+        <p style="margin:0 0 10px">Ensuite les entretiens se codent, les relevés s’empilent en couches, et l’information géographique fait apparaître ce que personne, interrogé séparément, n’avait su dire.</p>
+        <p style="margin:0 0 10px">Puis chacun choisit sa voie. Dessiner un quartier qui tienne. Gérer une vallée de montagne. Travailler entre le Nord et le Sud. Modéliser un territoire pour le comprendre. Quatre spécialisations, toutes adossées à des projets réels.</p>
+        <p style="margin:0 0 10px">À Géopolis, le bureau voisin abrite un géologue ou une climatologue. On traverse un couloir pour changer d’échelle.</p>
+      </div>
+      <div class="tablewrap" style="margin-top:14px">
       <table>
         <thead><tr><th>Ce que dit la voix</th><th>Ce qui s’affiche à l’écran</th></tr></thead>
         <tbody>
@@ -361,64 +421,116 @@ footer p{margin:0;max-width:74ch}
         </tbody>
       </table>
     </div>
-    <p style="margin:10px 0 0;font-size:13.5px;color:var(--ink-2)">Les quatre intitulés officiels font seize mots : énoncés tels quels ils s’entendent comme une liste de modules. La voix dit donc le geste, l’écran porte le nom. Même procédé que le triplé des sciences de la Terre.</p>
-    <p style="margin:12px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">142 mots · 57″ de parole · 66″ monté</p>
-  </div>
-  <div class="callout">
-    <h3>Sciences de l’environnement</h3>
-    <p style="margin:-2px 0 12px;font-size:12.5px;color:var(--ink-3);letter-spacing:.04em">MSc · Géopolis · en anglais</p>
-    <p style="margin:0 0 10px">L’eau d’un glacier met des années à rejoindre une nappe. Un versant se déforme longtemps avant de céder. Entre le phénomène et sa compréhension, il faut quelqu’un qui aille mesurer.</p>
-    <p style="margin:0 0 10px">Alors on installe. Une sonde dans le courant, un capteur sur un versant, un préleveur au fil de l’eau. On note l’heure, la valeur, les conditions — une mesure sans son contexte ne vaut rien.</p>
-    <p style="margin:0 0 10px">Au laboratoire, on dose, on recommence. Puis on modélise : on tente de reproduire ce qu’on a observé, et c’est quand le modèle résiste qu’on commence à comprendre.</p>
-    <p style="margin:0 0 10px">Eaux, dangers naturels, surfaces de montagne : trois manières d’entrer dans la même question. Le master s’enseigne en anglais, et les Alpes tiennent lieu de laboratoire à ciel ouvert.</p>
-    <p style="margin:12px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">122 mots · ≈ 60″</p>
-  </div>
-  <div class="callout" style="border-left-color:#1d5c39">
-    <h3>Biogéosciences <span style="font-size:12.5px;font-weight:400;color:#1d5c39;letter-spacing:.04em">— texte de la coordination, conservé tel quel</span></h3>
-    <p style="margin:-2px 0 12px;font-size:12.5px;color:var(--ink-3);letter-spacing:.04em">MSc · avec l’Université de Neuchâtel · en français</p>
-    <p style="margin:0 0 10px">La vie, l’eau, l’atmosphère et les roches interagissent à toutes les échelles de temps et d’espace. Ils s’influencent mutuellement et se modifient réciproquement. Le sol est le point central de ces interactions. Les biogéosciences étudient ces interactions, en particulier dans le sol ou les lacs, mais elles s’intéressent également à l’utilisation des bactéries dans des processus industriels ou aux méthodes alternatives pour protéger les cultures. C’est donc une approche pluridisciplinaire des écosystèmes qui est proposée avec ce master.</p>
-    <p style="margin:0 0 10px">Les approches scientifiques sont aussi diversifiées que les relations entre les composants des écosystèmes. Cela passe par la description des sols pour comprendre les processus et leur fonctionnement, l’étude de la faune et microflore qui vivent dans les sols, les descriptions des communautés végétales croissant à la surface de ces sols, des expériences en laboratoire, l’étude des lichens. Des excursions, en Suisse et en France, permettent d’apprendre les méthodes de terrain.</p>
-    <p style="margin:0 0 10px">L’analyse des échantillons est aussi diversifiée que les échantillons récoltés. Elle se fait à l’aide de loupes binoculaires ou de microscopes, de tamis ou de pH-mètres, mais de nombreux appareils à la pointe de la technique sont également utilisés, sans oublier le microscope électronique à balayage. D’autres projets font un usage intensif des ordinateurs pour produire des modèles mathématiques ou analyser des images de satellites.</p>
-    <p style="margin:0 0 10px">Un master né en 2004 à Neuchâtel, commun aux universités de Lausanne et Neuchâtel depuis 2009, qui par la diversité des thématiques abordées plonge les étudiants dans les approches pluridisciplinaires. C’est le seul master de Suisse romande, si ce n’est de Suisse, à proposer une formation solide en étude des sols et des communautés végétales. La diversité des thématiques abordées par les enseignants des deux universités assure à chaque étudiant·e intéressé·e par l’écologie de trouver un projet de recherche correspondant à ses ambitions.</p>
-    <p style="margin:14px 0 0;padding:12px 14px;background:var(--surface-2);border-radius:2px;font-size:13.5px;color:var(--ink-2)">
+      <p style="margin:10px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">142 mots</p>
+
+      <p class="soustitre">Le matériel réuni</p>
+      <p>La coordination a écrit son propre script, en quatorze scènes minutées, chacune avec son visuel attendu. <strong>C’est lui qui fait référence</strong> ; le texte ci-dessus s’y adapte. Il passe en comité scientifique au début novembre. Deux écarts à régler avant : les intitulés des spécialisations y sont raccourcis et l’un d’eux est inexact, et les visuels demandés sont des photographies alors que le format repose sur des gestes filmés.</p>
+  <ul class="mat">
+    <li><b>Excursion de master au Maroc</b><span>Quatre clips : route d’accès, panoramique sur une oasis, séance chez l’habitant, et un quatrième non dépouillé. Relève de la spécialisation développement durable Nord/Sud. Une capsule de 14 s en est tirée.</span></li>
+    <li><b>Terrain à Madagascar</b><span>Deux clips courts en 720p. Ambiance de traversée, pas de geste scientifique. À n’utiliser que bref ou recadré.</span></li>
+    <li><b>Ateliers de projet d’urbanisme</b><span>Deux éditions menées avec des collectivités, entrée de ville et place urbaine. Séances de travail, restitutions, maquettes. Réserve : 2019, donc plans serrés seulement, les vues d’ensemble dateraient le film.</span></li>
+    <li><b>Films d’étudiant·e·s d’un séminaire</b><span>Dix films sur la coexistence avec les oiseaux dans les espaces cultivés urbains, plus les éditions antérieures. Entretiens d’agriculteurs et de jardiniers, terrain urbain. Accord écrit des auteur·e·s nécessaire.</span></li>
+    <li class="att"><b>Annoncé, pas encore reçu</b><span>Des vidéos et podcasts sur la gestion des déchets et la résilience sociale ; des vidéos sur les systèmes tunisiens de rétention d’eau, issues d’un projet de thèse ; un envoi par SwissTransfer.</span></li>
+    <li class="ok"><b>Un dossier partagé a été ouvert</b><span>La coordination a créé un dossier en ligne que ses collègues alimentent directement. C’est la meilleure idée du projet : les liens de transfert expirent, un dossier non.</span></li>
+  </ul>
+    </div>
+    <div class="tabpanel" role="tabpanel" id="p-env" aria-labelledby="t-env" hidden>
+      <h3>Sciences de l’environnement</h3>
+      <p class="ref">MSc · Géopolis · en anglais</p>
+      <span class="etat att">Texte proposé, pas encore relu par la coordination</span>
+
+      <p class="soustitre">Le texte, en l’état</p>
+      <div class="texte">
+        <p style="margin:0 0 10px">L’eau d’un glacier met des années à rejoindre une nappe. Un versant se déforme longtemps avant de céder. Entre le phénomène et sa compréhension, il faut quelqu’un qui aille mesurer.</p>
+        <p style="margin:0 0 10px">Alors on installe. Une sonde dans le courant, un capteur sur un versant, un préleveur au fil de l’eau. On note l’heure, la valeur, les conditions — une mesure sans son contexte ne vaut rien.</p>
+        <p style="margin:0 0 10px">Au laboratoire, on dose, on recommence. Puis on modélise : on tente de reproduire ce qu’on a observé, et c’est quand le modèle résiste qu’on commence à comprendre.</p>
+        <p style="margin:0 0 10px">Eaux, dangers naturels, surfaces de montagne : trois manières d’entrer dans la même question. Le master s’enseigne en anglais, et les Alpes tiennent lieu de laboratoire à ciel ouvert.</p>
+      </div>
+      
+      <p style="margin:10px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">122 mots</p>
+
+      <p class="soustitre">Le matériel réuni</p>
+      <ul class="mat">
+    <li><b>Chaîne vidéo d’un laboratoire d’écotoxicologie</b><span>Vingt-quatre vidéos, environ deux heures. Gestes de paillasse filmés de près : micropipette, pH-mètre, centrifugeuse, étiquetage, broyeur, et des protocoles complets. Plus du terrain aquatique : exploration d’un site de référence, sortie d’orage, panache en lac. C’est le fonds le plus riche en gestes de tout le projet.</span></li>
+    <li><b>Relevé de versant</b><span>Clips d’une excursion de cartographie géomorphologique : mesure au mètre ruban, relevé à genoux sur un versant. Une capsule de 10 s en est tirée. L’attribution à cette filière reste à confirmer, l’excursion pouvant aussi relever de la géographie.</span></li>
+    <li class="att"><b>Annoncé, pas encore reçu</b><span>Une animation, transmise par lien de transfert.</span></li>
+    <li class="att"><b>Réserve sur les fichiers</b><span>Les vidéos du laboratoire sont publiées en ligne, pas livrées en fichiers sources. Il faut savoir qui détient les rushes et sous quelle licence elles ont été diffusées.</span></li>
+  </ul>
+    </div>
+    <div class="tabpanel" role="tabpanel" id="p-bgs" aria-labelledby="t-bgs" hidden>
+      <h3>Biogéosciences</h3>
+      <p class="ref">MSc · avec l’Université de Neuchâtel · en français</p>
+      <span class="etat att">Texte intégral de la coordination, choix de durée à trancher</span>
+
+      <p class="soustitre">Le texte, en l’état</p>
+      <div class="texte">
+        <p style="margin:0 0 10px">La vie, l’eau, l’atmosphère et les roches interagissent à toutes les échelles de temps et d’espace. Ils s’influencent mutuellement et se modifient réciproquement. Le sol est le point central de ces interactions. Les biogéosciences étudient ces interactions, en particulier dans le sol ou les lacs, mais elles s’intéressent également à l’utilisation des bactéries dans des processus industriels ou aux méthodes alternatives pour protéger les cultures. C’est donc une approche pluridisciplinaire des écosystèmes qui est proposée avec ce master.</p>
+        <p style="margin:0 0 10px">Les approches scientifiques sont aussi diversifiées que les relations entre les composants des écosystèmes. Cela passe par la description des sols pour comprendre les processus et leur fonctionnement, l’étude de la faune et microflore qui vivent dans les sols, les descriptions des communautés végétales croissant à la surface de ces sols, des expériences en laboratoire, l’étude des lichens. Des excursions, en Suisse et en France, permettent d’apprendre les méthodes de terrain.</p>
+        <p style="margin:0 0 10px">L’analyse des échantillons est aussi diversifiée que les échantillons récoltés. Elle se fait à l’aide de loupes binoculaires ou de microscopes, de tamis ou de pH-mètres, mais de nombreux appareils à la pointe de la technique sont également utilisés, sans oublier le microscope électronique à balayage. D’autres projets font un usage intensif des ordinateurs pour produire des modèles mathématiques ou analyser des images de satellites.</p>
+        <p style="margin:0 0 10px">Un master né en 2004 à Neuchâtel, commun aux universités de Lausanne et Neuchâtel depuis 2009, qui par la diversité des thématiques abordées plonge les étudiants dans les approches pluridisciplinaires. C’est le seul master de Suisse romande, si ce n’est de Suisse, à proposer une formation solide en étude des sols et des communautés végétales. La diversité des thématiques abordées par les enseignants des deux universités assure à chaque étudiant·e intéressé·e par l’écologie de trouver un projet de recherche correspondant à ses ambitions.</p>
+      </div>
+      <p style="margin:14px 0 0;padding:12px 14px;background:var(--surface-2);border-radius:2px;font-size:13.5px;color:var(--ink-2)">
       <strong style="color:var(--ink)">Incrustation pendant le temps « analyse » :</strong>
       Rock-Eval · GCMS · FTIR · ICP-OES · XRF · XRD · Picarro · microscope électronique à balayage.
       Huit sigles ne s’énoncent pas : la voix dit le geste, l’écran porte les noms.</p>
-    <p style="margin:10px 0 0;padding:12px 14px;background:var(--todo-bg);color:var(--todo-ink);border-radius:2px;font-size:13.5px">
+      <p style="margin:10px 0 0;padding:12px 14px;background:var(--todo-bg);color:var(--todo-ink);border-radius:2px;font-size:13.5px">
       <strong>Ce texte donne un film de 2′40″, pas de 75″.</strong> Mesuré : 150 s de parole, soit
       2′41″ monté et environ 26 plans à trouver, là où les autres films en demandent 10. La filière
       est par ailleurs celle qui a le moins d’images. Choix à acter : un film plus long pour cette
       filière, ou le texte intégral sur la page du master et une sélection de 75″ pour la série.</p>
-    <p style="margin:12px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">297 mots · 150″ de parole · 2′41″ monté</p>
-  </div>
+      <p style="margin:10px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">297 mots</p>
 
-  <div class="callout">
-    <h3>Études du tourisme</h3>
-    <p style="margin:-2px 0 12px;font-size:12.5px;color:var(--ink-3);letter-spacing:.04em">MA · campus de Sion · en français</p>
-    <p style="margin:0 0 10px">Une station vit six mois par an. Une vieille ville se vide de ses habitants pendant qu’elle se remplit de visiteurs. Le tourisme n’est pas une activité qui s’ajoute à un territoire : c’est l’une des formes les plus visibles de la mondialisation.</p>
-    <p style="margin:0 0 10px">Alors on va voir. On compte les arrivées au pied d’un site. On interroge des visiteurs qui repartiront le soir même, puis des habitants qui, eux, resteront. On ouvre les comptes d’une commune.</p>
-    <p style="margin:0 0 10px">Les entretiens se dépouillent et se confrontent aux chiffres. Ce qui semblait une évidence économique se révèle un choix politique — fait par quelqu’un, à un moment, au profit de certains.</p>
-    <p style="margin:0 0 10px">Aucune discipline n’en vient à bout seule : anthropologie, économie, géographie, histoire et sociologie travaillent ensemble. On apprend cela à Sion, où le terrain d’étude est à vingt minutes.</p>
-    <p style="margin:12px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">136 mots · ≈ 60″</p>
-  </div>
-  <div class="callout">
-    <h3>Durabilité et transformations socio-écologiques</h3>
-    <p style="margin:-2px 0 12px;font-size:12.5px;color:var(--ink-3);letter-spacing:.04em">MA · Géopolis · en français</p>
-    <p style="margin:0 0 10px">Nous connaissons les limites de la planète. Nous vivons au-delà. Y ramener nos sociétés n’est pas un problème technique : c’est une transformation, et une transformation, ça se conduit.</p>
-    <p style="margin:0 0 10px">Le terrain, ici, ce sont des ateliers, des assemblées, des séances où l’on négocie. On s’assied avec une commune autour d’un plan. On recueille les désaccords au lieu de les lisser. On va voir des pratiques qui fonctionnent déjà, quelque part, à petite échelle.</p>
-    <p style="margin:0 0 10px">L’analyse ne cherche pas le consensus. On confronte les textes, les chiffres et les éthiques ; on sépare ce qui tient de ce qui n’est qu’un vœu. En séminaire, on défend une position devant des gens qui ne la partagent pas, et parfois on en change.</p>
-    <p style="margin:0 0 10px">À Géopolis, la durabilité se discute à l’étage de celles et ceux qui mesurent ce dont on parle.</p>
-    <p style="margin:12px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">138 mots · ≈ 60″</p>
-  </div>
-  </div>
-  <div class="callout">
-    <h3>Le triplé de l’analyse — une solution généralisable</h3>
-    <p>Un master couvre souvent plusieurs approches aux démarches très différentes, et l’on ne peut pas toutes les détailler en vingt secondes. La solution retenue avec la coordination des sciences de la Terre : les <strong>nommer en trois temps</strong>, trois groupes nominaux sur trois plans courts de deux secondes — un échantillon de roche, une donnée de terrain, un modèle numérique. Six secondes en tout, et l’étendue de la discipline est dite sans être aplatie. Le procédé vaut pour toute filière à plusieurs entrées.</p>
-  </div>
+      <p class="soustitre">Le matériel réuni</p>
+      <ul class="mat">
+    <li class="att"><b>Rien en main à ce jour</b><span>C’est la seule filière dont la coordination a fourni un texte complet sans aucune image.</span></li>
+    <li class="att"><b>Annoncé, jamais transmis</b><span>Un film promotionnel et un film de camp de terrain, tournés par l’université partenaire, où terrain et laboratoire avaient été couverts volontairement. Les fichiers sont au secrétariat. <strong>C’est le seul blocage réel de cette filière</strong>, et il ne dépend pas de la coordination.</span></li>
+    <li><b>Photographies de terrain</b><span>La coordination en a, mais aucune vidéo. Une photographie en haute définition fait un plan honorable avec un mouvement lent.</span></li>
+  </ul>
+    </div>
+    <div class="tabpanel" role="tabpanel" id="p-met" aria-labelledby="t-met" hidden>
+      <h3>Études du tourisme</h3>
+      <p class="ref">MA · campus de Sion · en français</p>
+      <span class="etat att">Texte en préparation par la coordination, remise le 10 novembre</span>
 
-  <div class="callout">
-    <h3>Ce qui doit être vérifié avant enregistrement</h3>
-    <p>Les éléments factuels — orientations, universités partenaires, langue d’enseignement, site d’études — sont repris des pages de masters du site de la Faculté. Chaque coordination doit néanmoins les confirmer — une page web n’est pas toujours à jour, et c’est aussi à cela que sert la grille de questionnaire. Un chiffre faux dans une voix off se remarque bien plus qu’une image approximative.</p>
+      <p class="soustitre">Le texte, en l’état</p>
+      <div class="texte">
+        <p style="margin:0 0 10px">Une station vit six mois par an. Une vieille ville se vide de ses habitants pendant qu’elle se remplit de visiteurs. Le tourisme n’est pas une activité qui s’ajoute à un territoire : c’est l’une des formes les plus visibles de la mondialisation.</p>
+        <p style="margin:0 0 10px">Alors on va voir. On compte les arrivées au pied d’un site. On interroge des visiteurs qui repartiront le soir même, puis des habitants qui, eux, resteront. On ouvre les comptes d’une commune.</p>
+        <p style="margin:0 0 10px">Les entretiens se dépouillent et se confrontent aux chiffres. Ce qui semblait une évidence économique se révèle un choix politique — fait par quelqu’un, à un moment, au profit de certains.</p>
+        <p style="margin:0 0 10px">Aucune discipline n’en vient à bout seule : anthropologie, économie, géographie, histoire et sociologie travaillent ensemble. On apprend cela à Sion, où le terrain d’étude est à vingt minutes.</p>
+      </div>
+      
+      <p style="margin:10px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">136 mots</p>
+
+      <p class="soustitre">Le matériel réuni</p>
+      <ul class="mat">
+    <li class="att"><b>Aucune image, et c’est ce qui décide</b><span>Seule filière sans la moindre image. Le texte avance, le film ne peut pas commencer. La collecte d’images n’a pas à attendre le comité scientifique : ce sont deux chantiers séparés.</span></li>
+    <li><b>Ce qu’il faudrait, concrètement</b><span>Une enquête auprès de visiteurs, un comptage de flux au pied d’un site, un dépouillement d’entretiens, un atelier sur le site d’études. Filmé au téléphone, cela suffit.</span></li>
+    <li class="att"><b>À récupérer</b><span>Un sondage mené par une représentante étudiante sur les raisons qui ont conduit à choisir ce master. C’est la seule donnée réelle dont le projet dispose sur ce que cherchent les candidat·e·s, et elle vaut pour les six films.</span></li>
+  </ul>
+    </div>
+    <div class="tabpanel" role="tabpanel" id="p-dts" aria-labelledby="t-dts" hidden>
+      <h3>Durabilité et transformations socio-écologiques</h3>
+      <p class="ref">MA · Géopolis · en français</p>
+      <span class="etat att">Proposition envoyée à la coordination, en attente de relecture</span>
+
+      <p class="soustitre">Le texte, en l’état</p>
+      <div class="texte">
+        <p style="margin:0 0 10px">Nous connaissons les limites de la planète. Nous vivons au-delà. Y ramener nos sociétés n’est pas un problème technique : c’est une transformation, et une transformation, ça se conduit.</p>
+        <p style="margin:0 0 10px">Le terrain, ici, ce sont des ateliers, des assemblées, des séances où l’on négocie. On s’assied avec une commune autour d’un plan. On recueille les désaccords au lieu de les lisser. On va voir des pratiques qui fonctionnent déjà, quelque part, à petite échelle.</p>
+        <p style="margin:0 0 10px">L’analyse ne cherche pas le consensus. On confronte les textes, les chiffres et les éthiques ; on sépare ce qui tient de ce qui n’est qu’un vœu. En séminaire, on défend une position devant des gens qui ne la partagent pas, et parfois on en change.</p>
+        <p style="margin:0 0 10px">À Géopolis, la durabilité se discute à l’étage de celles et ceux qui mesurent ce dont on parle.</p>
+      </div>
+      
+      <p style="margin:10px 0 0;font-size:12.5px;color:var(--ink-3);font-family:'JetBrains Mono',monospace">137 mots</p>
+
+      <p class="soustitre">Le matériel réuni</p>
+      <ul class="mat">
+    <li><b>Ateliers de projet d’urbanisme</b><span>Les mêmes qu’en géographie : séances avec des collectivités autour d’un plan d’aménagement. Seul matériel candidat, partagé avec une autre filière et vieux de sept ans.</span></li>
+    <li class="att"><b>Rien qui lui soit propre</b><span>La coordination s’est engagée à chercher. Avec les études du tourisme, c’est la filière la moins pourvue.</span></li>
+    <li><b>Ce qu’il faudrait, concrètement</b><span>Un atelier avec des habitants, une séance avec une commune, un désaccord argumenté en séminaire, un dépouillement de données. Le terrain de cette filière est fait de réunions, et cela se filme.</span></li>
+  </ul>
+    </div>
   </div>
 </section>
 
@@ -766,3 +878,28 @@ footer p{margin:0;max-width:74ch}
 </footer>
 </body>
 </html>
+<script>
+(function () {
+  var liste = document.querySelector('.tablist');
+  if (!liste) return;
+  var onglets = Array.prototype.slice.call(liste.querySelectorAll('[role="tab"]'));
+  function montrer(i) {
+    onglets.forEach(function (o, k) {
+      var actif = k === i;
+      o.setAttribute('aria-selected', actif ? 'true' : 'false');
+      o.tabIndex = actif ? 0 : -1;
+      document.getElementById(o.getAttribute('aria-controls')).hidden = !actif;
+    });
+  }
+  onglets.forEach(function (o, i) {
+    o.addEventListener('click', function () { montrer(i); });
+    o.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = (i + d + onglets.length) % onglets.length;
+      montrer(n); onglets[n].focus();
+    });
+  });
+})();
+</script>
